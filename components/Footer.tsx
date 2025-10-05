@@ -8,6 +8,8 @@ export default function Footer() {
   const pathname = usePathname();
 
   const scrollToSection = (sectionId: string) => {
+    const headerOffset = window.innerWidth >= 1024 ? 170 : 100; // desktop / mobile
+  
     if (pathname !== "/") {
       // Redirection vers la page d'accueil avec l'ancre
       router.push("/#" + sectionId);
@@ -15,12 +17,11 @@ export default function Footer() {
       // Scroll smooth sur la page actuelle avec décalage
       const element = document.getElementById(sectionId);
       if (element) {
-        const yOffset = -170; // Décalage pour le header
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        const y = element.getBoundingClientRect().top + window.pageYOffset - headerOffset;
         window.scrollTo({ top: y, behavior: "smooth" });
       }
     }
-  };
+  };  
  
   return (
     <footer className="relative bg-[#ebdfc8] pb-10 lg:py-50 mt-10">

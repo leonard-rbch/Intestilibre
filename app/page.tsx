@@ -170,7 +170,7 @@ export default function Home() {
         <section
           id="presentation"
           className="
-            relative py-5 bg-[#ebdfc8]
+            relative py-5 pb-12 bg-[#ebdfc8]
             lg:py-20 lg:pb-40 lg:mt-75"
         >
           <div className="lg:container lg:mx-auto lg:px-4 lg:flex lg:flex-col lg:items-center lg:gap-12">
@@ -192,8 +192,7 @@ export default function Home() {
                 className="lg:w-[800px] lg:h-auto"
               />
             </div>
-
-            {/* Texte en dessous */}
+            
             <p
               className={`${shrikhand.className} font-alice font-bold text-center text-[20px] max-w-[350px] lg:text-[50px] lg:max-w-full`}
               style={{
@@ -201,10 +200,11 @@ export default function Home() {
                 lineHeight: "1.4",
               }}
             >
-              Vous n’êtes plus seul et nous vous le montrons :
+              Vous n’êtes plus seul et nous vous le montrons
             </p>
 
-            {/* Vidéo */}
+{/*
+            
             <div id="video-youtube" className="lg:mt-12 lg:w-full lg:flex lg:justify-center">
               <div
                 className="lg:bg-gray-300 lg:flex lg:items-center lg:justify-center lg:rounded-lg lg:shadow-lg"
@@ -216,6 +216,7 @@ export default function Home() {
                 🎬 Ici viendra la vidéo
               </div>
             </div>
+*/}
           </div>
 
           {/* Vague de transition */}
@@ -351,6 +352,7 @@ export default function Home() {
                 >
                   Non ce n’est pas <br /> dans votre tête, allez <br /> voir votre médecin.
                 </div>
+{/*                
                 <a
                   href="#video-youtube"
                   className="absolute lg:bottom-0 lg:right-0 font-bold underline cursor-pointer z-10 top-[100px] left-[160px] text-[15px] lg:top-[180px] lg:left-[310px] lg:text-[18px]"
@@ -358,6 +360,7 @@ export default function Home() {
                 >
                   En savoir +
                 </a>
+*/}
               </div>
 
               {/* Zone 2 */}
@@ -541,7 +544,8 @@ export default function Home() {
                 style={{height: "auto", objectFit: "cover" }}
               />
               <p className="mt-4 text-center text-[12px] lg:text-xl" style={{ color: "#000000" }}>
-                Nom de l’expert 2
+                Julie Michallat <br/>
+                Diététicienne spécialisée <br/> dans le (SII) et le protocole <br/> pauvre en FODMAPs
               </p>
             </div>
 
@@ -554,7 +558,9 @@ export default function Home() {
                 style={{height: "auto", objectFit: "cover" }}
               />
               <p className="mt-4 text-center text-[12px] lg:text-xl" style={{ color: "#000000" }}>
-                Nom de l’expert 3
+                Remy Marie <br/>
+                Hypnothérapeute et infirmier <br/>
+                Fondateur de Hyonos
               </p>
             </div>
 
@@ -580,7 +586,8 @@ export default function Home() {
                 style={{height: "auto", objectFit: "cover" }}
               />
               <p className="mt-4 text-center text-[12px] lg:text-xl" style={{ color: "#000000" }}>
-                Nom de l’expert 5
+               Elsa Dupont <br/>
+               Professeure de yoga certifiée <br/> “Yoga Alliance Internationale” 
               </p>
             </div>
 
@@ -898,7 +905,7 @@ export default function Home() {
 
             {/* Bouton */}
             <div className="flex justify-center mt-8 lg:mt-16">
-              <a href="https://intestilibre.systeme.io/ae28d126" target="_blank" rel="noopener noreferrer">
+              <a href="https://intestilibre.systeme.io/moduleoffert" target="_blank" rel="noopener noreferrer">
                 <button
                   className="lg:absolute px-3 py-1 lg:px-6 lg:py-2 rounded-full lg:text-[30px] lg:transition-transform lg:duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
                   style={{

@@ -27,7 +27,13 @@ body {
 
 
 [id] {
-  scroll-margin-top: 170px; /* adapte la valeur à la hauteur de ton header */
+  scroll-margin-top: 100px; /* adapte la valeur à la hauteur de ton header */
+}
+
+@media (min-width: 1024px) {
+  [id] {
+    scroll-margin-top: 170px; /* desktop */
+  }
 }
 
 html {

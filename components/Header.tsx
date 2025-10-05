@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
-    const headerOffset = 170;
+    const headerOffset = window.innerWidth >= 1024 ? 170 : 100;
     if (pathname !== "/") {
       router.push("/#" + sectionId);
       setTimeout(() => {

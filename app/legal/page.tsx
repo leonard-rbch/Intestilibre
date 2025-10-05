@@ -7,11 +7,14 @@ import Footer from "@/components/Footer";
 const LegalPage = () => {
   // Fonction scroll vers la section principale (Header)
   const scrollToSection = (sectionId: string) => {
+    const headerOffset = window.innerWidth >= 1024 ? 170 : 100; // desktop / mobile
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (!element) return;
+  
+    const y = element.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
   };
+  
 
   return (
     <div className="relative bg-[#fefaee]">
