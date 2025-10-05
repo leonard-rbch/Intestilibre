@@ -444,7 +444,7 @@ export default function Home() {
                   className={`${alice.className} absolute top-[10px] left-[80px] text-[20px] lg:top-[40px] lg:left-[160px] lg:text-[32px]`}
                   style={{color: "#333333" }}
                 >
-                  S'ADAPTER
+                  S&apos;ADAPTER
                 </div>
                 <div
                   className="absolute font-montserrat top-[35px] left-[85px] text-[15px] lg:top-[90px] lg:left-[170px] lg:text-[20px] lg:w-[380px]"
@@ -516,7 +516,7 @@ export default function Home() {
               margin: "0 auto",
             }}
           >
-            Notre équipe d'experts
+            Notre équipe d&apos;experts
           </h2>
 
           {/* Grille des experts */}
@@ -717,7 +717,7 @@ export default function Home() {
               className={`${abril.className} text-[20px] lg:text-[58px] text-center font-bold -mt-5 lg:-mt-15`}
               style={{ color: "#f06a3d" }}
             >
-              Prise en charge de l'intestin
+              Prise en charge de l&apos;intestin
             </h2>
 
             {/* Sous-titre */}
@@ -755,7 +755,7 @@ export default function Home() {
                     color: "#000000",
                   }}
                 >
-                  REJOINDRE LA FILE D'ATTENTE
+                  REJOINDRE LA FILE D&apos;ATTENTE
                 </button>
               </a>
             </div>
@@ -834,7 +834,7 @@ export default function Home() {
                     color: "#000000",
                   }}
                 >
-                  REJOINDRE LA FILE D'ATTENTE
+                  REJOINDRE LA FILE D&apos;ATTENTE
                 </button>
               </a>
             </div>
