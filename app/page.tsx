@@ -60,10 +60,10 @@ export default function Home() {
                     lg:static lg:font-montserrat lg:text-[28px] lg:text-gray-800 lg:text-center lg:mt-10 lg:max-w-[850px]  /* PC / LG */
                   "
                 >
-                  Vous pensez avoir tout essayé pour ne plus souffrir de votre intestin <br />
-                  chaque jour. Vous avez tort. <br />
-                  IntestiLibre est le premier accompagnement complet <span className="inline lg:hidden"><br /></span> créé par les <span className="hidden lg:inline"><br /></span>
-                  meilleurs experts.
+                  Vous méritez plus qu’un simple régime ou qu’un traitement isolé. <br />
+                  Chez IntestiLibre, une équipe d’experts en nutrition, neurosciences  <br />
+                  et santé intestinale vous accompagne pour apaiser durablement votre intestin <span className="inline lg:hidden"><br /></span> et retrouver une vie sans gêne. <span className="hidden lg:inline"><br /></span>
+                  
                 </h2>
 
               </div>
