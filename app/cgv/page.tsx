@@ -152,9 +152,9 @@ const LegalPage = () => {
                 marginTop: "20px",
             }}
             >
-            Article L.122-4 CPI : « Toute représentation ou reproduction intégrale ou partielle faite sans le consentement de l'auteur ou de ses ayants droit ou ayants cause est illicite. »
-            <br/> Article L.335-2 CPI : « Toute édition d'écrits, de composition musicale, de dessin, de peinture ou de toute autre production, imprimée ou gravée en entier ou en partie, au mépris des lois et règlements relatifs à la propriété des auteurs, est une contrefaçon et toute contrefaçon est un délit.»
-            <br/> ⚠️ Les actes de contrefaçon sont passibles de 3 ans d'emprisonnement et 300 000 € d'amende.
+            Article L.122-4 CPI : « Toute représentation ou reproduction intégrale ou partielle faite sans le consentement de l&apos;auteur ou de ses ayants droit ou ayants cause est illicite. »
+            <br/> Article L.335-2 CPI : « Toute édition d&apos;écrits, de composition musicale, de dessin, de peinture ou de toute autre production, imprimée ou gravée en entier ou en partie, au mépris des lois et règlements relatifs à la propriété des auteurs, est une contrefaçon et toute contrefaçon est un délit.»
+            <br/> ⚠️ Les actes de contrefaçon sont passibles de 3 ans d&apos;emprisonnement et 300 000 € d&apos;amende.
           </p>
 
           {/* Zone 10 */}

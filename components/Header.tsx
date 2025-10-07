@@ -56,7 +56,7 @@ const Header: React.FC = () => {
         <ul className="grid grid-cols-5 text-center">
           <li><button onClick={() => scrollToSection("accueil")} className="w-full py-2 hover:underline font-bold italic text-[20px]">Accueil</button></li>
           <li className="relative flex justify-center"><span className="absolute left-0 top-2 bottom-2 w-[4px] bg-[#cbaa93]"></span><button onClick={() => scrollToSection("accompagnement")} className="w-full py-2 hover:underline font-bold italic text-[20px]">Accompagnement</button></li>
-          <li className="relative flex justify-center"><span className="absolute left-0 top-2 bottom-2 w-[4px] bg-[#cbaa93]"></span><button onClick={() => scrollToSection("equipe_experts")} className="w-full py-2 hover:underline font-bold italic text-[20px]">Notre équipe d'experts</button></li>
+          <li className="relative flex justify-center"><span className="absolute left-0 top-2 bottom-2 w-[4px] bg-[#cbaa93]"></span><button onClick={() => scrollToSection("equipe_experts")} className="w-full py-2 hover:underline font-bold italic text-[20px]">Notre équipe d&apos;experts</button></li>
           <li className="relative flex justify-center"><span className="absolute left-0 top-2 bottom-2 w-[4px] bg-[#cbaa93]"></span><button onClick={() => scrollToSection("faq")} className="w-full py-2 hover:underline font-bold italic text-[20px]">Questions Fréquentes</button></li>
           <li className="relative flex justify-center"><span className="absolute left-0 top-2 bottom-2 w-[4px] bg-[#cbaa93]"></span><button onClick={() => window.open("https://www.easyrdv.fr/docteur/intestilibre", "_blank")} className="w-full py-2 hover:underline font-bold italic text-[20px]">Consultation</button></li>
         </ul>
@@ -85,7 +85,7 @@ const Header: React.FC = () => {
           <ul className="flex flex-col gap-4 text-center">
             <li><button onClick={() => scrollToSection("accueil")} className="font-bold text-lg">Accueil</button></li>
             <li><button onClick={() => scrollToSection("accompagnement")} className="font-bold text-lg">Accompagnement</button></li>
-            <li><button onClick={() => scrollToSection("equipe_experts")} className="font-bold text-lg">Notre équipe d'experts</button></li>
+            <li><button onClick={() => scrollToSection("equipe_experts")} className="font-bold text-lg">Notre équipe d&apos;experts</button></li>
             <li><button onClick={() => scrollToSection("faq")} className="font-bold text-lg">Questions Fréquentes</button></li>
             <li><button onClick={() => window.open("https://www.easyrdv.fr/docteur/intestilibre", "_blank")} className="font-bold text-lg">Consultation</button></li>
           </ul>

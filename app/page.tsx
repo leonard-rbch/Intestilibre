@@ -723,8 +723,8 @@ export default function Home() {
             {/* Sous-titre */}
             <div className="w-fit mt-5 lg:-mt-7 text-[12px] lg:text-[24px]" style={{ color: "#000000" }}>
               <p>
-                "Tout est poison, rien est poison.{" "}
-                <span className="font-bold">La dose fait le poison"</span>
+              &quot;Tout est poison, rien est poison.{" "}
+                <span className="font-bold">La dose fait le poison&quot;</span>
               </p>
               <p className="text-right w-full">Paracelse</p>
             </div>
@@ -804,7 +804,7 @@ export default function Home() {
 
             {/* Sous-titre */}
             <div className="w-fit text-center mt-2 lg:-mt-7 text-[12px] lg:text-[24px]"  style={{ color: "#000000" }}>
-              <p>"Mens sana in corpore sano"</p>
+              <p>&quot;Mens sana in corpore sano&quot;</p>
               <p>Un esprit sain dans un corps sain</p>
             </div>
 

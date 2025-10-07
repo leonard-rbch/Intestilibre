@@ -34,7 +34,7 @@ export default function Footer() {
       <div className="flex flex-col items-center gap-2 lg:absolute text-[14px] lg:text-[18px] " style={{ top: "80px", left: "500px", lineHeight: "2", color: "#1b2755" }}>
         <button onClick={() => scrollToSection("accueil")} className="block hover:underline">Accueil</button>
         <button onClick={() => scrollToSection("accompagnement")} className="block hover:underline">Accompagnement</button>
-        <button onClick={() => scrollToSection("equipe_experts")} className="block hover:underline">Notre équipe d'experts</button>
+        <button onClick={() => scrollToSection("equipe_experts")} className="block hover:underline">Notre équipe d&apos;experts</button>
       </div>
 
       {/* Colonne 2 */}
