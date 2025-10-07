@@ -61,7 +61,7 @@ export default function Home() {
                   "
                 >
                   Vous méritez plus qu’un simple régime ou qu’un traitement isolé. <br />
-                  Chez IntestiLibre, une équipe d’experts en nutrition, neurosciences  <br />
+                  Chez IntestiLibre, une équipe d’experts en nutrition, anxiété <br />
                   et santé intestinale vous accompagne pour apaiser durablement votre intestin <span className="inline lg:hidden"><br /></span> et retrouver une vie sans gêne. <span className="hidden lg:inline"><br /></span>
                   
                 </h2>
@@ -350,7 +350,7 @@ export default function Home() {
                     textAlign: "justify",
                   }}
                 >
-                  Non ce n’est pas <br /> dans votre tête, allez <br /> voir votre médecin.
+                  Non ce n’est pas <br /> dans votre tête, nous <br /> pouvons vous aider !
                 </div>
 {/*                
                 <a
@@ -417,8 +417,8 @@ export default function Home() {
                     textAlign: "justify",
                   }}
                 >
-                  Qu’est ce qui cause vos troubles ? <br /> Comment les réduire sur le cours <br /> terme ? <br />
-                  Avec quels compléments <br /> alimentaire ? Quels probiotiques ?
+                  Pourquoi je souffre autant ? <br /> Comment réguler mon transit lors <br />de mes crises ? Comment réduire <br />
+                  mon ventre gonflé ? Que dois-je <br /> prendre pour aller mieux ?
                 </div>
                 <a
                   href="#accompagnement-2"
@@ -454,12 +454,12 @@ export default function Home() {
                     textAlign: "justify",
                   }}
                 >
-                  Maintenant que la crise <br /> est calmée. Comment <br /> évitez les prochaines ? <br /> 
-                  Trouvez vos solutions <br /> long terme !
+                  La crise s’est calmée mais <br /> comment évitez les prochaines ? <br /> Réduisez votre anxiété qui <br /> vous pèse tant... < br />
+                  Personnalisez votre alimentation !
                 </div>
                 <a
                   href="#accompagnement-2"
-                  className="absolute lg:bottom-0 lg:right-0 font-bold underline cursor-pointer z-10 top-[120px] left-[180px] text-[15px] lg:top-[215px] lg:left-[300px] lg:text-[18px]"
+                  className="absolute lg:bottom-0 lg:right-0 font-bold underline cursor-pointer z-10 top-[135px] left-[180px] text-[15px] lg:top-[235px] lg:left-[300px] lg:text-[18px]"
                   style={{ color: "#f06a3d" }}
                 >
                   En savoir +
@@ -491,7 +491,7 @@ export default function Home() {
                     textAlign: "justify",
                   }}
                 >
-                  Retrouvez votre liberté <br /> de déplacement, vous <br /> n’êtes plus obliger de <br /> restez chez vous ! 
+                  Retrouvez goût à la vie, <br /> vous n’êtes plus obligé <br /> de rester chez vous !  
                 </div>
               </div>
             </div>
