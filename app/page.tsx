@@ -56,7 +56,7 @@ export default function Home() {
                 </h1>
                 <h2
                   className="
-                    absolute top-60 left-4 text-[12px] text-gray-800 text-center max-w-[200px] z-10   /* MOBILE */
+                    absolute top-55 left-4 text-[12px] text-gray-800 text-center max-w-[200px] z-10   /* MOBILE */
                     lg:static lg:font-montserrat lg:text-[28px] lg:text-gray-800 lg:text-center lg:mt-10 lg:max-w-[850px]  /* PC / LG */
                   "
                 >
@@ -455,7 +455,7 @@ export default function Home() {
                   }}
                 >
                   La crise s’est calmée mais <br /> comment évitez les prochaines ? <br /> Réduisez votre anxiété qui <br /> vous pèse tant... < br />
-                  Personnalisez votre alimentation !
+                  Personnalisez votre alimentation
                 </div>
                 <a
                   href="#accompagnement-2"
@@ -883,15 +883,25 @@ export default function Home() {
             {/* Texte + Image */}
             <div className="flex flex-col-reverse lg:flex-row items-start gap-6 lg:gap-12">
               {/* Texte gauche */}
-              <div className={`${alice.className} text-[15px] text-center lg:text-left lg:text-[28px] lg:w-[85%] leading-[1.4] text-black`}
+              <div
+                className={`${alice.className} text-[15px] text-center lg:text-left lg:text-[28px] lg:w-[85%] leading-[1.4] text-black`}
               >
+                <p className="mb-4">
+                  Vous avez entendu parler des probiotiques... mais :
+                </p>
+
+                <ul className="list-disc ml-5 mb-4">
+                  <li>Vous ne savez pas si cela fonctionne vraiment</li>
+                  <li>Vous hésitez sur les souches à utiliser ?</li>
+                  <li>Vous êtes perdus face à toutes ces données contradictoires</li>
+                </ul>
+
                 <p>
-                  Vous vous demandez souvent quels compléments <br /> alimentaires prendre pour réduire les symptômes de votre <span className="hidden lg:inline"><br /></span> intestin irritable. <br /> 
-                  Vous avez surement lu et entendu plein de données <br /> contradictoires. <br /> 
-                  En plus, cela coute cher et vous ne voulez pas perdre votre <span className="hidden lg:inline"><br /></span> argent... <br /> 
-                  Ne restez plus dans l’incompréhension et obtenez dès <span className="hidden lg:inline"><br /></span> maintenant la fiche récapitulative d’IntestiLibre : 
+                  Ne perdez pas plus de temps ni d’argent. <br /> <br />
+                  Obtenez dès maintenant la fiche récapitulative d’IntestiLibre pour savoir quoi prendre, comment et pourquoi :
                 </p>
               </div>
+
 
               {/* Image droite */}
               <div className="relative w-full lg:w-1/2 flex justify-center mt-4 lg:mt-0">
@@ -911,7 +921,7 @@ export default function Home() {
                   style={{
                     backgroundColor: "#f06a3d",
                     color: "#000000",
-                    top: "555px",
+                    top: "625px",
                     left: "200px"
                   }}
                 >
@@ -951,7 +961,7 @@ export default function Home() {
           <div className="container mx-auto lg:px-4 flex flex-col lg:gap-12">
             <h2
               className={`${abril.className} text-[24px] lg:text-[90px] ml-[120px] lg:ml-[350px] font-bold z-10`}
-              style={{ color: "#1b2755"}}
+              style={{ color: "#000000"}}
             >
               Questions fréquentes
             </h2>
@@ -976,7 +986,7 @@ export default function Home() {
                         href="https://www.easyrdv.fr/docteur/intestilibre"
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{ fontWeight: "bold", textDecoration: "underline", color: "#1b2755" }}
+                        style={{ fontWeight: "bold", textDecoration: "underline", color: "#000000" }}
                       >
                         profitez des consultations
                       </a>{" "}
@@ -988,7 +998,7 @@ export default function Home() {
                           const section = document.getElementById("accompagnement-5");
                           if (section) section.scrollIntoView({ behavior: "smooth" });
                         }}
-                        style={{ fontWeight: "bold", textDecoration: "underline", color: "#1b2755", cursor: "pointer" }}
+                        style={{ fontWeight: "bold", textDecoration: "underline", color: "#000000", cursor: "pointer" }}
                       >
                         Complément alimentaire
                       </a>{" "}
@@ -1017,7 +1027,7 @@ export default function Home() {
                   key={index}
                   className="cursor-pointer rounded-lg relative z-20 border-2 lg:border-5 px-3 lg:px-7 py-2 lg:py-5  w-[90%] lg:w-[1100px]"
                   style={{
-                    border: "solid #1b2755",
+                    border: "solid #000000",
                     backgroundColor: "#ebdfc8",
                     textAlign: "center",
                   }}
@@ -1025,7 +1035,7 @@ export default function Home() {
                   <summary
                     className="font-bold text-[15px] lg:text-[22px]"
                     style={{
-                      color: "#1b2755",
+                      color: "#000000",
                       cursor: "pointer",
                       listStyle: "none",
                     }}
@@ -1050,15 +1060,15 @@ export default function Home() {
 
             <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 mt-8 lg:mt-16">
               <div className="w-full px-2 lg:px-4 flex flex-col gap-4 lg:gap-16 lg:mt-2">
-                <div className="font-abril text-[18px] lg:text-[44px] text-center lg:text-left font-bold ml-[-30px] lg:ml-[-30px] " style={{ width: "120%", color: "#1b2755" }}>
+                <div className="font-abril text-[18px] lg:text-[44px] text-center lg:text-left font-bold ml-[-30px] lg:ml-[-30px] " style={{ width: "120%", color: "#000000" }}>
                   Votre question ne figure pas ici ?<br />
                 </div>
-                <div className="font-abril text-[14px] lg:text-[36px] text-center justify-center lg:justify-left lg:text-left font-bold ml-[-30px] lg:ml-[-29px]" style={{ width: "120%", lineHeight: "1.6", color: "#1b2755" }}>
+                <div className="font-abril text-[14px] lg:text-[36px] text-center justify-center lg:justify-left lg:text-left font-bold ml-[-30px] lg:ml-[-29px]" style={{ width: "120%", lineHeight: "1.6", color: "#000000" }}>
                   Posez-la juste ici, un de nos experts y<br /> répondra dans les plus brefs délais :
                 </div>
               </div>
 
-              <div className="p-2 lg:p-6 rounded-lg mt-2 lg:mt-0 relative z-10 border-[2px] lg:border-[3px] ml-[35px] lg:ml-[0px] w-[80%] lg:w-[45%] " style={{ border: "solid #1b2755", backgroundColor: "#ebdfc8" }}>
+              <div className="p-2 lg:p-6 rounded-lg mt-2 lg:mt-0 relative z-10 border-[2px] lg:border-[3px] ml-[35px] lg:ml-[0px] w-[80%] lg:w-[45%] " style={{ border: "solid #000000", backgroundColor: "#ebdfc8" }}>
                 <ContactForm />
               </div>
             </div>
