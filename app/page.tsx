@@ -1012,7 +1012,7 @@ export default function Home() {
                 },
                 {
                   q: "Combien coûtera l’accompagnement complet ?",
-                  a: "Le prix n’est pas encore fixé car il dépendra de la quantité de support qui sera disponible. Dès que le tarif sortira nous le notifierons sur le site. A savoir qu’IntestiLibre met un point d’honneur à ce qu’il ne dépasse pas 1000 euros"
+                  a: "Le prix n’est pas encore fixé car il dépendra de la quantité de support qui sera disponible. Dès que le tarif sortira nous le notifierons sur le site. A savoir qu’IntestiLibre met un point d’honneur à ce qu’il ne dépasse pas euros"
                 },
                 {
                   q: "Qu’est ce qu’il y a de différent avec cette accompagnement complet par rapport aux autres ?",
