@@ -31,6 +31,19 @@ export default function Home() {
     }
   }, []);
 
+useEffect(() => {
+  const script1 = document.createElement("script");
+  script1.src = "https://fast.wistia.com/player.js";
+  script1.async = true;
+  document.body.appendChild(script1);
+
+  const script2 = document.createElement("script");
+  script2.src = "https://fast.wistia.com/embed/ude8hqfgt1.js";
+  script2.async = true;
+  script2.type = "module";
+  document.body.appendChild(script2);
+}, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-[#fefaee]">
       <Header />
@@ -43,68 +56,66 @@ export default function Home() {
 {/* Section Accueil */}
         <section
           id="accueil"
-          className="py-12 px-4 flex flex-col gap-8 min-h-screen bg-[#fefaee] lg:py-20 lg:pt-[200px] lg:min-h-screen lg:flex lg:flex-col lg:relative lg:mb-[300px]"
+          className="relative flex flex-col bg-[#fefaee] mt-[27vw] sm:mt-[20vw] lg:mt-[10rem]"
         >
-          <div className="lg:container lg:mx-auto lg:px-4 lg:flex lg:flex-col lg:gap-12">
+          <div className="flex flex-col px-[1rem] pb-[5vw] lg:pb-[2vw] ">
             {/* Bloc 1 : Titres accrocheurs */}
-            <div id="titres" className="flex flex-col items-center gap-4 py-16 lg:w-full lg:flex lg:flex-col lg:md:flex-row lg:items-start lg:md:items-center lg:gap-4 lg:py-6">
-              <div className="flex flex-col items-center gap-4 z-10 lg:flex lg:flex-col">
-                <h1
-                  className={`${shrikhand.className} font-bold italic text-[24px] text-center text-orange-600 lg:font-bold lg:italic lg:text-[52px] lg:text-orange-600 lg:text-center lg:mt-0 lg:ml-48`}
-                >
-                  Libérez vos problèmes <br /> intestinaux !
-                </h1>
-                <h2
-                  className="
-                    absolute top-55 left-4 text-[12px] text-gray-800 text-center max-w-[200px] z-10   /* MOBILE */
-                    lg:static lg:font-montserrat lg:text-[28px] lg:text-gray-800 lg:text-center lg:mt-10 lg:max-w-[850px]  /* PC / LG */
-                  "
-                >
-                  Vous méritez plus qu’un simple régime ou qu’un traitement isolé. <br />
-                  Chez IntestiLibre, une équipe d’experts en nutrition, anxiété <br />
-                  et santé intestinale vous accompagne pour apaiser durablement votre intestin <span className="inline lg:hidden"><br /></span> et retrouver une vie sans gêne. <span className="hidden lg:inline"><br /></span>
-                  
-                </h2>
-
-              </div>
+            <div id="titres" className="flex flex-col items-start w-full">
+                <div className="flex gap-5 lg:gap-10 mb-5">
+                  <img
+                      src="/images/illustration2.png"
+                      alt="Petite illustration"
+                      className=" w-[20%] lg:w-[20%] h-auto z-10"
+                  />
+                  <div className="flex w-full xl:ml-[5vw]">
+                    <h1
+                      className={`${shrikhand.className} text-center font-bold italic text-orange-600 text-[5vw] lg:text-[4vw]`}
+                    >
+                      Libérez vos problèmes <br /> intestinaux !
+                    </h1>
+                  </div>
+                </div> 
+                <div className="flex">
+                  <div className="flex flex-col 
+                                  gap-5 w-[60%] 
+                                  lg:gap-[3rem] lg:w-[70%] lg:pt-[3rem]
+                                  xl:gap-[4rem] 2xl:gap-[5rem] "
+                  >
+                    <h2
+                      className="
+                        text-center text-gray-800 font-montserrat text-[3vw] lg:text-[2vw] z-10"
+                    >
+                      Vous méritez plus qu’un simple régime ou qu’un traitement isolé. <br />
+                      Chez IntestiLibre, une équipe d’experts en nutrition, anxiété <span className="hidden lg:inline"><br /></span>
+                      et santé intestinale vous accompagne pour apaiser durablement votre intestin et retrouver une vie sans gêne. <span className="hidden lg:inline"><br /></span>
+                      
+                    </h2>
+                    <img
+                        src="/images/illustration3.png"
+                        alt="Nos Missions"
+                        className="w-full lg:w-[50%] h-auto"
+                    />
+                  </div>
+                  <div className="w-[40%] lg:w-[30%]">
+                    <img
+                      src="/images/illustration1.png"
+                      alt="Grande illustration"
+                      className="w-[100%] h-auto"
+                    />
+                  </div>
+                </div>
             </div>
 
-            {/* Bloc 2 : Illustrations */}
-            <div id="illustrations" className="relative w-full h-[200px] flex justify-center items-center lg:relative lg:w-full lg:h-[0px] lg:md:h-[0px] lg:z-20">
-              <img
-                src="/images/illustration2.png"
-                alt="Petite illustration"
-                className="absolute top-[-100px] left-0 w-[80px] h-auto lg:absolute lg:top-[-440px] lg:left-[-70px] lg:w-[150px] lg:md:w-[200px] lg:h-auto"
-              />
-              <img
-                src="/images/illustration1.png"
-                alt="Grande illustration"
-                className="absolute top-[-30px] right-0 w-[150px] h-auto lg:absolute lg:top-[-340px] lg:right-[-50px] lg:w-[250px] lg:md:w-[400px] lg:h-auto"
-              />
-            </div>
-
-            {/* Bloc 3 : Missions */}
-            <div
-              id="missions"
+            {/* Bloc 2 : Missions */}
+            <div id="missions"
               className="
-                flex flex-col items-center gap-6 py-16 bg-[#fefaee] relative  /* MOBILE */
-                lg:py-20 lg:relative lg:w-full lg:flex lg:flex-col lg:items-center lg:bg-[#fefaee] lg:-mt-[100px]"
+                flex flex-col items-start [#fefaee] 
+                mx-[4vw] gap-3 mt-[6vw]
+                lg:mx-[7vw] lg:gap-0 lg:mt-[3vw] "
             >
-              <div className="mb-6 lg:mb-12">
-                <img
-                  src="/images/illustration3.png"
-                  alt="Nos Missions"
-                  className="
-                    w-[250px] h-auto absolute top-[-60px] left-0  /* MOBILE */
-                    lg:absolute lg:top-[20px] lg:left-[-50px] lg:w-[250px] lg:md:w-[400px] lg:h-auto"
-                />
-              </div>
-
-              <div className="pb-12
-                lg:relative lg:w-full lg:max-w-5xl lg:flex lg:flex-col lg:md:flex-row lg:justify-center lg:gap-8">
                 <div
-                  className={`${alice.className} absolute p-4 text-[12px] w-[220px] h-[80px] top-0 left-0 border-2 border-brown-300 flex items-center justify-center text-center rounded-full shadow-md
-                    lg:p-6 lg:border-4 lg:text-[22px] lg:w-[420px] lg:h-[150px] lg:top-0 lg:left-[-120px]`}
+                  className={`${alice.className} flex text-center text-[3vw] px-[3vw] py-[1.5vw] w-auto h-auto border-[0.5vw] border-brown-300 rounded-full shadow-md
+                    lg:text-[2vw] lg:border-[0.4vw]`}
                   style={{
                     backgroundColor: "#f8f4ed",
                   }}
@@ -114,8 +125,8 @@ export default function Home() {
                 </div>
 
                 <div
-                  className={`${alice.className} absolute p-4 text-[12px] w-[220px] h-[90px] top-[90px] left-[100px] border-2 border-brown-300 flex items-center justify-center text-center rounded-full shadow-md
-                    lg:p-6 lg:border-4 lg:absolute lg:text-[22px] lg:w-[500px] lg:h-[170px] lg:top-[100px] lg:left-[370px]`}
+                  className={`${alice.className} self-end flex text-center text-[3vw] px-[3vw] py-[1.5vw] w-auto h-auto border-[0.5vw] border-brown-300 rounded-full shadow-md
+                    lg:text-[2vw] lg:mr-[5vw] lg:border-[0.4vw]`}
                   style={{
                     backgroundColor: "#f8f4ed",
                   }}
@@ -126,23 +137,21 @@ export default function Home() {
                 </div>
 
                 <div
-                  className={`${alice.className} absolute p-4 text-[12px] w-[110px] h-[40px] top-[190px] left-[50px] border-2 border-brown-300 flex items-center justify-center text-center rounded-full shadow-md
-                    lg:p-6 lg:border-4 lg:text-[22px] lg:w-[200px] lg:h-[50px] lg:top-[300px] lg:left-[40px]`}
+                  className={`${alice.className} flex text-center text-[3vw] px-[3vw] py-[1.5vw] ml-[10vw] w-auto h-auto border-[0.5vw] border-brown-300 rounded-full shadow-md
+                    lg:text-[2vw] lg:ml-[15vw] lg:border-[0.4vw]`}
                   style={{
                     backgroundColor: "#f8f4ed",
                   }}
-                >
+                >                                                                                                 
                   <a href="#accompagnement-2" className="lg:underline lg:cursor-pointer">
                     En savoir +
                   </a>
                 </div>
-              </div>
             </div>
           </div>
 
           <div className="
-                absolute bottom-[-55px] left-0 w-full overflow-hidden leading-none rotate-180
-                lg:bottom-[-350px] lg:left-0">
+                mt-[2vw] w-full overflow-hidden leading-none rotate-180">
             <svg
               className="lg:relative lg:block lg:w-full lg:h-[120px]"
               xmlns="http://www.w3.org/2000/svg"
@@ -165,19 +174,26 @@ export default function Home() {
 
 
 
+
+
+
+
+
+
+
+
+
     
 {/* Section Cercle Vicieux */}
         <section
           id="presentation"
-          className="
-            relative py-5 pb-12 bg-[#ebdfc8]
-            lg:py-20 lg:pb-40 lg:mt-75"
+          className="bg-[#ebdfc8] pt-[5vw] lg:pt-[0vw]"
         >
-          <div className="lg:container lg:mx-auto lg:px-4 lg:flex lg:flex-col lg:items-center lg:gap-12">
+          <div className="flex flex-col items-center lg:px-[1vw] lg:gap-[3vw]">
             {/* Titre */}
             <div className="flex justify-center w-full pb-5">
               <h2
-                className={`${shrikhand.className} font-alice font-bold text-center max-w-[350px] text-[20px] lg:max-w-full lg:text-[50px]`}
+                className={`${shrikhand.className} font-alice font-bold text-center text-[6vw] lg:text-[4vw]`}
                 style={{ color: "#f06a3d" }}
               >
                 Vous vous reconnaissez dans cette situation ?
@@ -185,44 +201,63 @@ export default function Home() {
             </div>
 
             {/* Image centrée */}
-            <div className="lg:flex lg:justify-center pb-10">
+            <div className="flex justify-center pb-10">
               <img
                 src="/images/illustration_cercle2.png"
                 alt="Illustration"
-                className="lg:w-[800px] lg:h-auto"
+                className="lg:w-[70vw] lg:h-auto"
               />
             </div>
-            
+
             <p
-              className={`${shrikhand.className} font-alice font-bold text-center text-[20px] max-w-[350px] lg:text-[50px] lg:max-w-full`}
+              className={`${shrikhand.className} font-alice font-bold text-center text-[5vw] lg:text-[3.5vw]`}
               style={{
                 color: "#f06a3d",
                 lineHeight: "1.4",
               }}
             >
-              Vous n’êtes plus seul et nous vous le montrons
+              Vous n’êtes plus seul et nous vous le montrons :
             </p>
 
-{/*
-            
-            <div id="video-youtube" className="lg:mt-12 lg:w-full lg:flex lg:justify-center">
+            {/* ===================== VIDEO WISTIA ===================== */}
+            <div
+              id="video-wistia"
+              className="w-full flex justify-center px-[3vw] mt-[5vw]"
+            >
               <div
-                className="lg:bg-gray-300 lg:flex lg:items-center lg:justify-center lg:rounded-lg lg:shadow-lg"
-                style={{
-                  width: "900px",
-                  height: "500px",
-                }}
+                className="
+                  relative 
+                  w-full 
+                  max-w-[90vw] lg:max-w-[70vw] xl:max-w-[65vw]
+                  aspect-[16/9] 
+                  rounded-2xl 
+                  overflow-hidden 
+                  shadow-[0_4px_20px_rgba(0,0,0,0.2)]
+                "
               >
-                🎬 Ici viendra la vidéo
+                <style>{`
+                  wistia-player[media-id='ude8hqfgt1']:not(:defined) {
+                    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/ude8hqfgt1/swatch');
+                    display: block;
+                    filter: blur(5px);
+                    padding-top: 56.25%;
+                  }
+                `}</style>
+
+                <wistia-player
+                  media-id="ude8hqfgt1"
+                  aspect="1.7777777777777777"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                  }}
+                ></wistia-player>
               </div>
             </div>
-*/}
           </div>
 
           {/* Vague de transition */}
-          <div className="
-                absolute bottom-[0px] left-0 w-full overflow-hidden leading-none rotate-180
-                lg:bottom-[-50px] lg:left-0">
+          <div className="mt-[8vw] w-full overflow-hidden leading-none rotate-180">
             <svg
               className="lg:relative lg:block lg:w-full lg:h-[120px]"
               xmlns="http://www.w3.org/2000/svg"
@@ -244,19 +279,15 @@ export default function Home() {
 
 
 {/* Section Accompagnement */}
-        <section
-          id="accompagnement"
-          className="relative flex flex-col mt-2 min-h-[900px] lg:mt-10 lg:min-h-[1400px]"
-        >
-          <div className="container mx-auto px-4 flex flex-col lg:gap-12">
+        <section id="accompagnement" className="relative flex flex-col">
             {/* Bloc 1 : Titre + sous-titre + barre */}
-            <div id="titre-accompagnement" className="w-full flex flex-col items-center text-center py-6">
+            <div id="titre-accompagnement" className="flex flex-col items-center text-center w-full gap-[2vw] py-[2rem] lg:py-[0rem] sm:mt-[3vw] lg:mt-[3vw]">
               <div
-                className="rounded-lg px-8 py-2 lg:py-4 inline-block"
+                className="rounded-lg px-[2vw] py-[1vw] lg:py-4 inline-block"
                 style={{ backgroundColor: "#ffecd5" }}
               >
                 <h2
-                  className={`${abril.className} text-[16px] lg:text-[50px] uppercase`}
+                  className={`${abril.className} text-[5vw] lg:text-[4vw] uppercase`}
                   style={{ color: "#f06a3d" }}
                 >
                   VOUS NE SAVEZ PLUS QUOI FAIRE ?
@@ -264,14 +295,14 @@ export default function Home() {
               </div>
 
               <p
-                className="font-montserrat text-[14px] lg:text-[35px] mt-2 lg:mt-6 text-gray-700"
+                className="font-montserrat text-gray-700 text-[4vw] lg:text-[4vw] "
                 style={{ color: "#333333" }}
               >
                 Voici ce que vous devez suivre :
               </p>
 
               <div
-                className="mt-2 lg:mt-6 h-[3px] lg:h-[6px]"
+                className="h-[0.8vw]"
                 style={{
                   width: "28.5%",
                   backgroundColor: "#f06a3d",
@@ -279,223 +310,234 @@ export default function Home() {
               />
             </div>
 
-            {/* Bloc 2 : Illustrations */}
-            <div id="illustrations-accompagnement" className="lg:relative lg:w-full lg:h-[0px] lg:md:h-[0px] lg:z-20">
-              <img
-                src="/images/illustration_cerveau.png"
-                alt="Illustration 1"
-                className="absolute top-[130px] left-[20px] lg:top-[-70px] lg:left-[50px] w-[60px] lg:w-[230px] h-auto"
-              />
-              <img
-                src="/images/illustration_doc.png"
-                alt="Illustration 2"
-                className="absolute top-[200px] right-[20px] lg:top-[100px] lg:right-[70px] w-[50px] lg:w-[200px] h-auto"
-              />
-              <img
-                src="/images/illustration_draw1.png"
-                alt="Illustration 3"
-                className="absolute top-[270px] right-[0px] lg:top-[300px] lg:right-[-110px] w-[60px] lg:w-[200px] h-auto"
-              />
-              <img
-                src="/images/illustration_bibliotheque.png"
-                alt="Illustration 4"
-                className="absolute top-[320px] left-[30px] lg:top-[285px] lg:left-[0px] w-[70px] lg:w-[230px] h-auto"
-              />
-              <img
-                src="/images/illustration_draw2.png"
-                alt="Illustration 5"
-                className="absolute top-[520px] left-[0px] lg:top-[600px] lg:left-[-105px] w-[70px] lg:w-[220px] h-auto"
-              />
-              <img
-                src="/images/illustration_panneau.png"
-                alt="Illustration 6"
-                className="absolute top-[610px] right-[20px] lg:top-[620px] lg:right-[80px] w-[70px] lg:w-[250px] h-auto"
-              />
-              <img
-                src="/images/illustration_hirondelle.png"
-                alt="Illustration 7"
-                className="absolute top-[750px] left-[30px] lg:top-[840px] lg:left-[90px] w-[70px] lg:w-[200px] h-auto"
-              />
-            </div>
 
 
-
-            {/* Bloc 3 : Zones de texte */}
+            {/* Bloc 2 : Zones de texte */}
             <div
               id="textes-accompagnement"
-              className="lg:py-20 lg:relative w-full flex flex-col lg:items-center lg:bg-[#fefaee] lg:-mt-[100px]"
+              className="flex flex-col bg-[#fefaee] gap-y-3"
             >
               {/* Zone 1 */}
-              <div
+              <div 
                 id="zone1"
-                className="absolute top-[110px] left-[50px] w-[500px] h-[300px] lg:top-[-20px] lg:left-[370px] lg:w-[500px] lg:h-[300px]"
+                className="flex gap-[5vw] lg:gap-[13vw] h-[30vw] lg:h-[18vw] ml-[5vw] lg:mt-[4vw] "
               >
-                <div
-                  className={`${alice.className} absolute font-bold leading-none top-[0px] left-[40px] text-[70px] lg:top-[10px] lg:left-[80px] lg:text-[150px]`}
-                  style={{color: "#f06a3d" }}
-                >
-                  1
+                <img
+                  src="/images/illustration_cerveau.png"
+                  alt="Illustration 1"
+                  className="w-[20vw] lg:w-[22vw] h-[40%] lg:h-[60%] lg:ml-[3vw] mt-[5vw] lg:mt-[1vw] z-10"
+                />
+                <div className="relative self-start w-full h-[30vw]">
+                        <div
+                          className={`${alice.className} absolute font-bold leading-none top-[0vw] left-[13%] sm:left-[3%] md:left-[2%] text-[20vw] 
+                                                         lg:top-[Ovw] lg:left-[0vw] lg:text-[12vw]`}
+                          style={{color: "#f06a3d" }}
+                        >
+                          1
+                        </div>
+                        <div
+                          className={`${alice.className} absolute top-[1vw] left-[22vw] sm:left-[12vw] md:left-[11vw] text-[5vw] 
+                                                         lg:top-[0vw] lg:left-[7vw] lg:text-[3vw]`}
+                          style={{color: "#333333" }}
+                        >
+                          COMPRENDRE
+                        </div>
+                        <div
+                          className="absolute font-montserrat top-[8vw] left-[23vw] sm:left-[13vw] md:left-[12vw] text-[3.5vw] 
+                                     lg:top-[4vw] lg:left-[8vw] lg:text-[2vw]"
+                          style={{
+                            color: "#666666",
+                            lineHeight: 1.4,
+                            textAlign: "justify",
+                          }}
+                        >
+                          Non ce n’est pas <br /> dans votre tête, nous <br /> pouvons vous aider !
+                        </div>             
+                        <a
+                          href="#video-wistia"
+                          className="absolute font-bold underline cursor-pointer z-10 top-[24vw] left-[45vw] sm:left-[33vw] md:left-[32vw] text-[4vw] 
+                                     lg:top-[13vw] lg:left-[21vw] lg:text-[2vw]"
+                          style={{ color: "#000000" }}
+                        >
+                          En savoir +
+                        </a>
                 </div>
-                <div
-                  className={`${alice.className} absolute top-[10px] left-[80px] text-[20px] lg:top-[40px] lg:left-[160px] lg:text-[32px]`}
-                  style={{color: "#333333" }}
-                >
-                  COMPRENDRE
-                </div>
-                <div
-                  className="absolute font-montserrat top-[35px] left-[85px] text-[15px] lg:top-[90px] lg:left-[170px] lg:text-[20px] lg:w-[380px]"
-                  style={{
-                    color: "#666666",
-                    lineHeight: 1.4,
-                    textAlign: "justify",
-                  }}
-                >
-                  Non ce n’est pas <br /> dans votre tête, nous <br /> pouvons vous aider !
-                </div>
-{/*                
-                <a
-                  href="#video-youtube"
-                  className="absolute lg:bottom-0 lg:right-0 font-bold underline cursor-pointer z-10 top-[100px] left-[160px] text-[15px] lg:top-[180px] lg:left-[310px] lg:text-[18px]"
-                  style={{ color: "#f06a3d" }}
-                >
-                  En savoir +
-                </a>
-*/}
               </div>
 
               {/* Zone 2 */}
               <div
                 id="zone2"
-                className="absolute top-[240px] left-[60px] w-[500px] h-[300px] lg:top-[170px] lg:left-[310px] lg:w-[500px] lg:h-[300px]"
+                className="flex ml-[8vw] sm:ml-[12vw] lg:ml-[24vw] mr-[5vw] "
               >
-                <div
-                  className={`${alice.className} absolute font-bold leading-none top-[0px] left-[40px] text-[70px] lg:top-[10px] lg:left-[80px] lg:text-[150px]`}
-                  style={{ color: "#f06a3d" }}
-                >
-                  2
+                <div className="relative w-full h-[30vw] lg:h-[17vw]">
+                          <div
+                            className={`${alice.className} absolute font-bold leading-none top-[0px] left-[11%] sm:left-[3%] md:left-[2%] text-[20vw] 
+                                                           lg:top-[Ovw] lg:left-[0vw] lg:text-[12vw]`}
+                            style={{ color: "#f06a3d" }}
+                          >
+                            2
+                          </div>
+                          <div
+                            className={`${alice.className} absolute top-[1vw] left-[22vw] sm:left-[12vw] md:left-[11vw] text-[5vw] 
+                                                           lg:top-[0vw] lg:left-[7vw] lg:text-[3vw]`}
+                            style={{color: "#333333" }}
+                          >
+                            DIAGNOSTIC
+                          </div>
+                          <div
+                            className="absolute font-montserrat top-[8vw] left-[23vw] sm:left-[13vw] md:left-[12vw] text-[3.5vw] 
+                                       lg:top-[4vw] lg:left-[8vw] lg:text-[2vw]"
+                            style={{
+                              color: "#666666",
+                              lineHeight: 1.4,
+                              textAlign: "justify",
+                            }}
+                          >
+                            Cela peut prendre <br /> du temps mais c’est <br /> nécessaire ! 
+                          </div>
                 </div>
-                <div
-                  className={`${alice.className} absolute top-[10px] left-[80px] text-[20px] lg:top-[40px] lg:left-[160px] lg:text-[32px]`}
-                  style={{color: "#333333" }}
-                >
-                  DIAGNOSTIC
-                </div>
-                <div
-                  className="absolute font-montserrat top-[35px] left-[85px] text-[15px] lg:top-[90px] lg:left-[170px] lg:text-[20px] lg:w-[380px]"
-                  style={{
-                    color: "#666666",
-                    lineHeight: 1.4,
-                    textAlign: "justify",
-                  }}
-                >
-                  Cela peut prendre <br /> du temps mais c’est <br /> nécessaire ! 
-                </div>
+                <img
+                  src="/images/illustration_doc.png"
+                  alt="Illustration 2"
+                  className="w-[17vw] sm:w-[18vw] lg:w-[15vw] h-[100%] mt-[3vw] lg:mt-[1vw] lg:mr-[8vw] z-10 "
+                />
               </div>
 
               {/* Zone 3 */}
               <div
                 id="zone3"
-                className="absolute top-[370px] left-[10px] w-[500px] h-[300px] lg:top-[370px] lg:left-[370px] lg:w-[500px] lg:h-[300px]"
+                className="flex lg:gap-[7vw]"
               >
-                <div
-                  className={`${alice.className} absolute font-bold leading-none top-[0px] left-[40px] text-[70px] lg:top-[10px] lg:left-[80px] lg:text-[150px]`}
-                  style={{ color: "#f06a3d" }}
-                >
-                  3
+                <img
+                  src="/images/illustration_bibliotheque.png"
+                  alt="Illustration 4"
+                  className="w-[20vw] sm:w-[25vw] lg:w-[23vw] h-[100%] ml-[2vw] sm:ml-[5vw] lg:ml-[5vw] z-10"
+                />
+                <div className="relative self-start w-full h-[45vw] lg:h-[25vw]">
+                          <div
+                            className={`${alice.className} absolute font-bold leading-none top-[0px] left-[13%] sm:left-[3%] md:left-[2%] text-[20vw] 
+                                                           lg:top-[Ovw] lg:left-[0vw] lg:text-[12vw]`}
+                            style={{ color: "#f06a3d" }}
+                          >
+                            3
+                          </div>
+                          <div
+                            className={`${alice.className} absolute top-[1vw] left-[22vw] sm:left-[12vw] md:left-[11vw] text-[5vw]
+                                                           lg:top-[0vw] lg:left-[7vw] lg:text-[3vw]`}
+                            style={{color: "#333333" }}
+                          >
+                            APPRENDRE
+                          </div>
+                          <div
+                            className="absolute font-montserrat top-[8vw] left-[23vw] sm:left-[13vw] md:left-[12vw] text-[3.5vw] 
+                                       lg:top-[4vw] lg:left-[8vw] lg:text-[2vw]"
+                            style={{
+                              color: "#666666",
+                              lineHeight: 1.4,
+                              textAlign: "justify",
+                            }}
+                          >
+                            Pourquoi je souffre autant ? <br /> Comment réguler mon transit lors <br />de mes crises ? Comment réduire <br />
+                            mon ventre gonflé ? Que dois-je <br /> prendre pour aller mieux ?
+                          </div>
+                          <a
+                            href="#accompagnement-2"
+                            className="absolute font-bold underline cursor-pointer z-10 top-[35vw] left-[53vw] sm:left-[40vw] md:left-[39vw] text-[4vw] 
+                                       lg:top-[18vw] lg:left-[25vw] lg:text-[2vw]"
+                            style={{ color: "#000000" }}
+                          >
+                            En savoir +
+                          </a>
                 </div>
-                <div
-                  className={`${alice.className} absolute top-[10px] left-[80px] text-[20px] lg:top-[40px] lg:left-[160px] lg:text-[32px]`}
-                  style={{color: "#333333" }}
-                >
-                  APPRENDRE
-                </div>
-                <div
-                  className="absolute font-montserrat top-[35px] left-[85px] text-[15px] lg:top-[90px] lg:left-[170px] lg:text-[20px] lg:w-[380px]"
-                  style={{
-                    color: "#666666",
-                    lineHeight: 1.4,
-                    textAlign: "justify",
-                  }}
-                >
-                  Pourquoi je souffre autant ? <br /> Comment réguler mon transit lors <br />de mes crises ? Comment réduire <br />
-                  mon ventre gonflé ? Que dois-je <br /> prendre pour aller mieux ?
-                </div>
-                <a
-                  href="#accompagnement-2"
-                  className="absolute lg:bottom-0 lg:right-0 font-bold underline cursor-pointer z-10 top-[140px] left-[200px] text-[15px] lg:top-[235px] lg:left-[380px] lg:text-[18px]"
-                  style={{ color: "#f06a3d" }}
-                >
-                  En savoir +
-                </a>
               </div>
 
               {/* Zone 4 */}
               <div
                 id="zone4"
-                className="absolute top-[545px] left-[20px] w-[500px] h-[300px] lg:top-[620px] lg:left-[320px] lg:w-[500px] lg:h-[300px]"
+                className="flex"
               >
-                <div
-                  className={`${alice.className} absolute font-bold leading-none top-[0px] left-[40px] text-[70px] lg:top-[10px] lg:left-[80px] lg:text-[150px]`}
-                  style={{ color: "#f06a3d" }}
-                >
-                  4
+                <div className="relative self-start w-full h-[45vw] lg:h-[25vw] lg:ml-[20vw] ">
+                          <div
+                            className={`${alice.className} absolute font-bold leading-none top-[0px] left-[13%] sm:left-[3%] md:left-[2%] text-[20vw] 
+                                                           lg:top-[Ovw] lg:left-[0vw] lg:text-[12vw]`}
+                            style={{ color: "#f06a3d" }}
+                          >
+                            4
+                          </div>
+                          <div
+                            className={`${alice.className} absolute top-[1vw] left-[22vw] sm:left-[12vw] md:left-[11vw] text-[5vw]
+                                                           lg:top-[0vw] lg:left-[7vw] lg:text-[3vw]`}
+                            style={{color: "#333333" }}
+                          >
+                            S&apos;ADAPTER
+                          </div>
+                          <div
+                            className="absolute font-montserrat top-[8vw] left-[23vw] sm:left-[13vw] md:left-[12vw] text-[3.5vw] 
+                                       lg:top-[4vw] lg:left-[8vw] lg:text-[2vw]"
+                            style={{
+                              color: "#666666",
+                              lineHeight: 1.4,
+                              textAlign: "justify",
+                            }}
+                          >
+                            La crise s’est calmée mais <br /> comment évitez les prochaines ? <br /> Réduisez votre anxiété qui <br /> vous pèse tant... < br />
+                            Personnalisez votre alimentation
+                          </div>
+                          <a
+                            href="#accompagnement-2"
+                            className="absolute font-bold underline cursor-pointer z-10 top-[35vw] left-[45vw] sm:left-[39vw] md:left-[38vw] text-[4vw] 
+                                       lg:top-[18vw] lg:left-[25vw] lg:text-[2vw]"
+                            style={{ color: "#000000" }}
+                          >
+                            En savoir +
+                          </a>
                 </div>
-                <div
-                  className={`${alice.className} absolute top-[10px] left-[80px] text-[20px] lg:top-[40px] lg:left-[160px] lg:text-[32px]`}
-                  style={{color: "#333333" }}
-                >
-                  S&apos;ADAPTER
-                </div>
-                <div
-                  className="absolute font-montserrat top-[35px] left-[85px] text-[15px] lg:top-[90px] lg:left-[170px] lg:text-[20px] lg:w-[380px]"
-                  style={{
-                    color: "#666666",
-                    lineHeight: 1.4,
-                    textAlign: "justify",
-                  }}
-                >
-                  La crise s’est calmée mais <br /> comment évitez les prochaines ? <br /> Réduisez votre anxiété qui <br /> vous pèse tant... < br />
-                  Personnalisez votre alimentation
-                </div>
-                <a
-                  href="#accompagnement-2"
-                  className="absolute lg:bottom-0 lg:right-0 font-bold underline cursor-pointer z-10 top-[135px] left-[180px] text-[15px] lg:top-[235px] lg:left-[300px] lg:text-[18px]"
-                  style={{ color: "#f06a3d" }}
-                >
-                  En savoir +
-                </a>
+                <img
+                  src="/images/illustration_panneau.png"
+                  alt="Illustration 6"
+                  className="w-[25vw] sm:w-[28vw] lg:w-[20vw] h-[100%] mt-[5vw] lg:mt-[3vw] sm:mr-[4vw] lg:mr-[10vw] z-10"
+                />
               </div>
 
               {/* Zone 5 */}
               <div
                 id="zone5"
-                className="absolute top-[720px] left-[80px] w-[500px] h-[300px] lg:top-[870px] lg:left-[400px] lg:w-[500px] lg:h-[300px]"
+                className="flex"
               >
-                <div
-                  className={`${alice.className} absolute font-bold leading-none top-[0px] left-[40px] text-[70px] lg:top-[10px] lg:left-[80px] lg:text-[150px]`}
-                  style={{color: "#f06a3d" }}
-                >
-                  5
-                </div>
-                <div
-                  className={`${alice.className} absolute top-[10px] left-[80px] text-[20px] lg:top-[40px] lg:left-[160px] lg:text-[32px]`}
-                  style={{color: "#333333" }}
-                >
-                  PROFITER
-                </div>
-                <div
-                  className="absolute font-montserrat top-[35px] left-[85px] text-[15px] lg:top-[90px] lg:left-[170px] lg:text-[20px] lg:w-[380px]"
-                  style={{
-                    color: "#666666",
-                    lineHeight: 1.4,
-                    textAlign: "justify",
-                  }}
-                >
-                  Retrouvez goût à la vie, <br /> vous n’êtes plus obligé <br /> de rester chez vous !  
+                <img
+                  src="/images/illustration_hirondelle.png"
+                  alt="Illustration 7"
+                  className="w-[20vw] lg:w-[18vw] h-[100%] ml-[10vw] lg:ml-[15vw] sm:mt-[2vw] z-10"
+                />
+                <div className="relative self-start w-full h-[30vw] lg:h-[15vw] lg:ml-[5vw] ">
+                          <div
+                            className={`${alice.className} absolute font-bold leading-none top-[0px] left-[13%] sm:left-[3%] md:left-[2%] text-[20vw] 
+                                                           lg:top-[Ovw] lg:left-[0vw] lg:text-[12vw]`}
+                            style={{color: "#f06a3d" }}
+                          >
+                            5
+                          </div>
+                          <div
+                            className={`${alice.className} absolute top-[1vw] left-[22vw] sm:left-[12vw] md:left-[11vw] text-[5vw] 
+                                                           lg:top-[0vw] lg:left-[7vw] lg:text-[3vw]`}
+                            style={{color: "#333333" }}
+                          >
+                            PROFITER
+                          </div>
+                          <div
+                            className="absolute font-montserrat top-[8vw] left-[23vw] sm:left-[13vw] md:left-[12vw] text-[3.5vw] 
+                                       lg:top-[4vw] lg:left-[8vw] lg:text-[2vw]"
+                            style={{
+                              color: "#666666",
+                              lineHeight: 1.4,
+                              textAlign: "justify",
+                            }}
+                          >
+                            Retrouvez goût à la vie, <br /> vous n’êtes plus obligé <br /> de rester chez vous !  
+                          </div>
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
 
@@ -508,7 +550,7 @@ export default function Home() {
         >
           {/* Titre */}
           <h2
-            className="text-center font-alice lg:mb-12 font-bold text-[20px] lg:text-[60px] rounded-[12px] py-[14px] px-[50px] lg:py-[17px] lg:px-[70px]"
+            className="text-center font-alice lg:mb-12 font-bold text-[6vw] lg:text-[5vw] rounded-[12px] py-[14px] px-[10vw] lg:py-[17px] lg:px-[70px]"
             style={{
               color: "#f06a3d",
               backgroundColor: "#ffecd5",
@@ -520,16 +562,16 @@ export default function Home() {
           </h2>
 
           {/* Grille des experts */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 lg:mt-20 mt-8 gap-x-10 lg:gap-x-30 gap-y-10 lg:gap-y-16">
+          <div className="grid grid-cols-2 lg:grid-cols-3 lg:mt-20 mt-10 gap-x-10 lg:gap-x-30 gap-y-10 lg:gap-y-16">
             {/* Carte Expert 1 */}
             <div className="flex flex-col items-center">
               <img
                 src="/images/illustration_expert1.png"
                 alt="Expert 1"
-                className="rounded-lg w-[150px] lg:w-[300px]"
+                className="rounded-lg w-[40vw] lg:w-[25vw]"
                 style={{height: "auto", objectFit: "cover" }}
               />
-              <p className="mt-4 text-center text-[12px] lg:text-xl" style={{ color: "#000000" }}>
+              <p className="mt-4 text-center text-[3vw] lg:text-[1.9vw]" style={{ color: "#000000" }}>
                 Enzo Margueritte <br/>
                 Fondateur d’IntestiLibre <br/> Etudiant en 4ᵉ année de pharmacie
               </p>
@@ -540,10 +582,10 @@ export default function Home() {
               <img
                 src="/images/illustration_expert2.png"
                 alt="Expert 2"
-                className="rounded-lg w-[150px] lg:w-[300px]"
+                className="rounded-lg w-[40vw] lg:w-[25vw]"
                 style={{height: "auto", objectFit: "cover" }}
               />
-              <p className="mt-4 text-center text-[12px] lg:text-xl" style={{ color: "#000000" }}>
+              <p className="mt-4 text-center text-[3vw] lg:text-[1.9vw] " style={{ color: "#000000" }}>
                 Julie Michallat <br/>
                 Diététicienne spécialisée <br/> dans le (SII) et le protocole <br/> pauvre en FODMAPs
               </p>
@@ -554,10 +596,10 @@ export default function Home() {
               <img
                 src="/images/illustration_expert3.png"
                 alt="Expert 3"
-                className="rounded-lg w-[150px] lg:w-[300px]"
+                className="rounded-lg w-[40vw] lg:w-[25vw]"
                 style={{height: "auto", objectFit: "cover" }}
               />
-              <p className="mt-4 text-center text-[12px] lg:text-xl" style={{ color: "#000000" }}>
+              <p className="mt-4 text-center text-[3vw] lg:text-[1.9vw]" style={{ color: "#000000" }}>
                 Remy Marie <br/>
                 Hypnothérapeute et infirmier <br/>
                 Fondateur de Hyonos
@@ -569,10 +611,10 @@ export default function Home() {
               <img
                 src="/images/illustration_expert4.png"
                 alt="Expert 4"
-                className="rounded-lg w-[150px] lg:w-[300px]"
+                className="rounded-lg w-[40vw] lg:w-[25vw]"
                 style={{height: "auto", objectFit: "cover" }}
               />
-              <p className="mt-4 text-center text-[12px] lg:text-xl" style={{ color: "#000000" }}>
+              <p className="mt-4 text-center text-[3vw] lg:text-[1.9vw]" style={{ color: "#000000" }}>
                 Nathalie Moyen <br/> Sophrologue et Praticienne <br/> EFT certifiée.
               </p>
             </div>
@@ -582,10 +624,10 @@ export default function Home() {
               <img
                 src="/images/illustration_expert5.png"
                 alt="Expert 5"
-                className="rounded-lg w-[150px] lg:w-[300px]"
+                className="rounded-lg w-[40vw] lg:w-[25vw]"
                 style={{height: "auto", objectFit: "cover" }}
               />
-              <p className="mt-4 text-center text-[12px] lg:text-xl" style={{ color: "#000000" }}>
+              <p className="mt-4 text-center text-[3vw] lg:text-[1.9vw]" style={{ color: "#000000" }}>
                Elsa Dupont <br/>
                Professeure de yoga certifiée <br/> “Yoga Alliance Internationale” 
               </p>
@@ -596,10 +638,10 @@ export default function Home() {
               <img
                 src="/images/illustration_expert6.png"
                 alt="Expert 6"
-                className="rounded-lg w-[150px] lg:w-[300px]"
+                className="rounded-lg w-[40vw] lg:w-[25vw]"
                 style={{height: "auto", objectFit: "cover" }}
               />
-              <p className="mt-4 text-center text-[12px] lg:text-xl" style={{ color: "#000000" }}>
+              <p className="mt-4 text-center text-[3vw] lg:text-[1.9vw]" style={{ color: "#000000" }}>
                 Sandra Trinel Daragon <br/> Cheffe spécialisée dans les recettes <span className="hidden lg:inline"><br /></span> pour le SII
               </p>
             </div>
@@ -616,37 +658,41 @@ export default function Home() {
 {/* Section Accompagnement - Partie 2 */}
         <section
           id="accompagnement-2"
-          className="relative lg:py-20 pb-15 lg:pb-40 flex flex-col bg-[#fefaee]"
+          className="flex flex-col bg-[#fefaee]"
         >
-          <div className="container mx-auto px-2 lg:px-4 flex flex-col gap-4 lg:gap-12">
+          <div className="flex flex-col lg:px-4 gap-4 lg:gap-12">
 
             {/* Bloc 1 : Titre dans encadré */}
-            <div className="w-full flex flex-col items-center text-center py-4 lg:py-6">
+            <div className="flex items-center text-center w-full py-2 lg:py-3">
+              {/* Barre horizontale */}
               <div
-                className="rounded-lg lg:px-2 w-[330px] lg:w-[1000px] h-[25px] lg:h-[65px] z-10"
+                className="h-[1vw] lg:h-[0.5vw] w-[15%] lg:w-[10%]"
+                style={{
+                  backgroundColor: "#f06a3d",
+                }}
+              />
+              <div
+                className="rounded-lg lg:w-[78%] px-[1vw] lg:px-[1vw] py-2 h-auto z-10"
                 style={{ backgroundColor: "#ffc49a" }}
               >
                 <h2
-                  className={`${shrikhand.className} text-[16px] lg:text-[46px]`}
+                  className={`${shrikhand.className} text-[4vw] lg:text-[3.5vw]`}
                   style={{ color: "#f06a3d" }}
                 >
                   Les 3 piliers pour retrouver sa liberté 
                 </h2>
               </div>
-
-              {/* Barre horizontale */}
-              <div
-                className="absolute top-[25px] left-[-6%] lg:top-[133px] lg:left-[-10%] h-[4px] lg:h-[6px] w-[15%] lg:w-[26%]"
-                style={{
-                  backgroundColor: "#f06a3d",
-                }}
-              />
+                <img
+                  src="/images/illustration_draw3.png"
+                  alt="Dernière illustration"
+                  className="w-[22vw] lg:w-[12vw] xl:w-[10vw] h-auto lg:ml-[1vw]"
+                />
             </div>
 
             {/* Bloc 2 : 3 images rectangulaires verticales */}
             <div className="w-full z-10 
                           grid grid-cols-2 gap-4 justify-items-center 
-                          lg:flex lg:justify-between lg:px-4">
+                          lg:flex lg:justify-between lg:px-[2vw] lg:gap-[4vw]">
               {[1, 2, 3].map((i) => (
               <div
                 key={i}
@@ -655,31 +701,21 @@ export default function Home() {
                 <img
                   src={`/images/illustration_pillier${i}.png`}
                   alt={`Pillier ${i}`}
-                  className="w-[150px] md:w-[200px] lg:w-[350px]"
+                  className="w-[40vw] lg:w-[30vw]"
                 />
                 <a
                   href={`#accompagnement-${i + 2}`}
-                  className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-[10px] lg:text-[20px] font-bold underline cursor-pointer whitespace-nowrap"
+                  className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-[3vw] lg:text-[2vw] font-bold underline cursor-pointer whitespace-nowrap"
                 >
                   EN SAVOIR PLUS
                 </a>
               </div>
               ))}
             </div>
-
-
-            {/* Bloc 3 : Image d'illustration finale */}
-            <div className="relative w-full h-auto">
-              <img
-                src="/images/illustration_draw3.png"
-                alt="Dernière illustration"
-                className="absolute top-[-200px] lg:top-[-820px] left-[10px] lg:left-[97%] w-[80px] lg:w-[120px] h-auto"
-              />
-            </div>
           </div>
 
           {/* Vague de transition vers section suivante */}
-          <div className="absolute bottom-[0px] lg:bottom-[-20px] left-0 w-full overflow-hidden leading-none rotate-180">
+          <div className="mt-[7vw] w-full overflow-hidden leading-none rotate-180">
             <svg
               className="lg:relative lg:block lg:w-full lg:h-[120px]"
               xmlns="http://www.w3.org/2000/svg"
@@ -708,20 +744,20 @@ export default function Home() {
 {/* Section Accompagnement - Partie 3 */}
         <section
           id="accompagnement-3"
-          className="relative py-10 lg:py-28 pb-10 lg:pb-40 flex flex-col bg-[#ebdfc8]"
+          className="flex flex-col bg-[#ebdfc8]"
         >
-          <div className="container mx-auto px-4 flex flex-col lg:gap-12">
+          <div className="flex flex-col px-[5vw] py-[5vw] lg:py-[3vw] gap-[3vw] sm:gap-[5vw] lg:gap-[4vw]">
 
             {/* Titre */}
             <h2
-              className={`${abril.className} text-[20px] lg:text-[58px] text-center font-bold -mt-5 lg:-mt-15`}
+              className={`${abril.className} text-[5vw] lg:text-[4vw] text-center font-bold`}
               style={{ color: "#f06a3d" }}
             >
               Prise en charge de l&apos;intestin
             </h2>
 
             {/* Sous-titre */}
-            <div className="w-fit mt-5 lg:-mt-7 text-[12px] lg:text-[24px]" style={{ color: "#000000" }}>
+            <div className="w-fit text-center text-[3vw] lg:text-[2vw] lg:ml-[3vw]" style={{ color: "#000000" }}>
               <p>
               &quot;Tout est poison, rien est poison.{" "}
                 <span className="font-bold">La dose fait le poison&quot;</span>
@@ -730,26 +766,26 @@ export default function Home() {
             </div>
 
             {/* Images positionnables */}
-            <div className="relative w-full h-[200px] lg:h-[500px]">
+            <div className="flex justify-center w-full gap-[5vw] lg:gap-[7vw]">
               {/* Image 1 */}
               <img
                 src="/images/illustration_tableau1.png"
                 alt="Image 1"
-                className="absolute top-[20px] left-[0px] w-[160px] lg:top-[10px] lg:left-[70px] lg:w-[500px] h-auto"
+                className="w-[42vw] sm:w-[45vw] md:w-[45vw] lg:w-[40vw] h-auto"
               />
               {/* Image 2 */}
               <img
                 src="/images/illustration_tableau2.png"
                 alt="Image 2"
-                className="absolute top-[20px] right-[0px] w-[160px] lg:top-[10px] lg:right-[70px] lg:w-[500px] h-auto"
+                className="w-[42vw] sm:w-[45vw] md:w-[45vw] lg:w-[40vw] h-auto"
               />
             </div>
 
             {/* Gros bouton centré */}
-            <div className="flex justify-center lg:mt-4">
+            <div className="flex justify-center">
               <a href="https://intestilibre.systeme.io/ae28d126" target="_blank" rel="noopener noreferrer">
                 <button
-                  className="px-2 lg:px-6 lg:py-2 rounded-lg text-[14px] lg:text-[26px] font-bold transition-transform duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
+                  className="px-2 lg:px-6 lg:py-2 rounded-lg text-[3vw] lg:text-[2vw] font-bold transition-transform duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
                   style={{
                     backgroundColor: "#f06a3d",
                     color: "#000000",
@@ -762,7 +798,7 @@ export default function Home() {
           </div>
 
           {/* Vague de transition vers section suivante */}
-          <div className="absolute bottom-[-10px] lg:bottom-[-20px] left-0 w-full overflow-hidden leading-none rotate-180">
+          <div className="mt-[2vw] mb-[-1vw] w-full overflow-hidden leading-none rotate-180">
             <svg
               className="lg:relative lg:block lg:w-full lg:h-[120px]"
               xmlns="http://www.w3.org/2000/svg"
@@ -790,45 +826,45 @@ export default function Home() {
 {/* Section Accompagnement - Partie 4 */}
         <section
           id="accompagnement-4"
-          className="relative py-10 lg:py-28 pb-10 lg:pb-40 flex flex-col bg-[#fefaee]"
+          className="flex flex-col bg-[#fefaee]"
         >
-          <div className="container mx-auto px-4 flex flex-col lg:gap-12">
+          <div className="flex flex-col px-[5vw] py-[5vw] lg:py-[3vw] gap-[3vw] sm:gap-[5vw] lg:gap-[4vw] ">
 
             {/* Titre */}
             <h2
-              className={`${shrikhand.className} text-[20px] lg:text-[58px] text-center font-bold -mt-4 lg:-mt-10`}
+              className={`${shrikhand.className} text-[5vw] lg:text-[4vw] text-center font-bold`}
               style={{ color: "#000000" }}
             >
               Prise en charge des émotions 
             </h2>
 
             {/* Sous-titre */}
-            <div className="w-fit text-center mt-2 lg:-mt-7 text-[12px] lg:text-[24px]"  style={{ color: "#000000" }}>
+            <div className="w-fit text-center text-[3vw] lg:text-[2vw] lg:ml-[3vw] "  style={{ color: "#000000" }}>
               <p>&quot;Mens sana in corpore sano&quot;</p>
               <p>Un esprit sain dans un corps sain</p>
             </div>
 
             {/* Images positionnables */}
-            <div className="relative w-full h-[200px] lg:h-[500px]">
+            <div className="flex justify-center w-full gap-[5vw] lg:gap-[7vw] ">
               {/* Image 1 */}
               <img
                 src="/images/illustration_tableau3.png"
                 alt="Image 1"
-                className="absolute top-[20px] left-[0px] w-[160px] lg:top-[10px] lg:left-[70px] lg:w-[500px] h-auto"
+                className="w-[42vw] sm:w-[45vw] md:w-[45vw] lg:w-[40vw] h-auto"
               />
               {/* Image 2 */}
               <img
                 src="/images/illustration_tableau4.png"
                 alt="Image 2"
-                className="absolute top-[20px] right-[0px] w-[160px] lg:top-[10px] lg:right-[70px] lg:w-[500px] h-auto"
+                className="w-[42vw] sm:w-[45vw] md:w-[45vw] lg:w-[40vw] h-auto"
               />
             </div>
 
             {/* Gros bouton centré */}
-            <div className="flex justify-center lg:mt-4">
+            <div className="flex justify-center">
               <a href="https://intestilibre.systeme.io/ae28d126" target="_blank" rel="noopener noreferrer">
                 <button
-                  className="px-2 lg:px-6 lg:py-2 rounded-lg text-[14px] lg:text-[26px] font-bold transition-transform duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
+                  className="px-2 lg:px-6 lg:py-2 rounded-lg text-[3vw] lg:text-[2vw] font-bold transition-transform duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
                   style={{
                     backgroundColor: "#f06a3d",
                     color: "#000000",
@@ -841,7 +877,7 @@ export default function Home() {
           </div>
 
           {/* Vague en bas */}
-          <div className="absolute bottom-[-10px] lg:bottom-[-20px] left-0 w-full overflow-hidden leading-none rotate-180">
+          <div className="mt-[2vw] mb-[-1vw] w-full overflow-hidden leading-none rotate-180">
             <svg
               className="lg:relative lg:block lg:w-full lg:h-[120px]"
               xmlns="http://www.w3.org/2000/svg"
@@ -868,23 +904,23 @@ export default function Home() {
 
 
 {/* Section Accompagnement - Partie 5 */}
-        <section id="accompagnement-5" className="relative py-6 lg:py-10 pb-15 lg:pb-55 bg-[#ebdfc8] overflow-hidden">
+        <section id="accompagnement-5" className="py-[5vw] lg:py-[3vw] bg-[#ebdfc8] overflow-hidden">
           
           {/* CONTENU */}
-          <div className="relative z-10 container mx-auto px-4 lg:px-8">
+          <div className="z-10 px-[3vw] lg:px-[3vw]">
             {/* Titre */}
             <h2
-              className={`${abril.className} text-[20px] lg:text-[80px] font-bold text-center mb-5 lg:mb-10`}
+              className={`${abril.className} text-[6vw] lg:text-[5vw] font-bold text-center mb-[6vw] lg:mb-[4vw]`}
               style={{ color: "#f06a3d" }}
             >
               Compléments Alimentaires :
             </h2>
 
             {/* Texte + Image */}
-            <div className="flex flex-col-reverse lg:flex-row items-start gap-6 lg:gap-12">
+            <div className="flex flex-col-reverse lg:flex-row items-start gap-[2vw] lg:gap-[4vw]">
               {/* Texte gauche */}
               <div
-                className={`${alice.className} text-[15px] text-center lg:text-left lg:text-[28px] lg:w-[85%] leading-[1.4] text-black`}
+                className={`${alice.className} text-[3vw] text-center lg:text-left lg:text-[2vw] lg:w-[85%] leading-[1.4] text-black`}
               >
                 <p className="mb-4">
                   Vous avez entendu parler des probiotiques... mais :
@@ -904,25 +940,23 @@ export default function Home() {
 
 
               {/* Image droite */}
-              <div className="relative w-full lg:w-1/2 flex justify-center mt-4 lg:mt-0">
+              <div className="flex w-full lg:w-1/2 justify-center lg:mt-[2vw]">
                 <img
                   src="/images/illustration_livre.png"
                   alt="Illustration"
-                  className="relative w-[200px] h-auto mb-4 lg:absolute lg:top-15 lg:right-[-50px] lg:w-[450px]"
+                  className="w-[70vw] h-auto mb-4 lg:w-[40vw]"
                 />
               </div>
             </div>
 
             {/* Bouton */}
-            <div className="flex justify-center mt-8 lg:mt-16">
+            <div className="flex justify-center lg:justify-start mt-[6vw] lg:mt-[5vw] lg:ml-[11vw] ">
               <a href="https://intestilibre.systeme.io/moduleoffert" target="_blank" rel="noopener noreferrer">
                 <button
-                  className="lg:absolute px-3 py-1 lg:px-6 lg:py-2 rounded-full lg:text-[30px] lg:transition-transform lg:duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
+                  className="px-3 py-1 lg:px-6 lg:py-2 text-[3.2vw] rounded-full lg:text-[2.3vw] lg:transition-transform lg:duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
                   style={{
                     backgroundColor: "#f06a3d",
                     color: "#000000",
-                    top: "625px",
-                    left: "200px"
                   }}
                 >
                   Oui, je veux ma fiche offerte
@@ -932,7 +966,7 @@ export default function Home() {
           </div>
           
           {/* Vague en bas */}
-          <div className="absolute bottom-0 lg:bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+          <div className="mt-[5vw] mb-[-5vw] w-full overflow-hidden leading-none rotate-180">
             <svg
               className="lg:relative lg:block lg:w-full lg:h-[120px]"
               xmlns="http://www.w3.org/2000/svg"
@@ -958,30 +992,30 @@ export default function Home() {
 
 {/* Section FAQ */}
         <section id="faq" className="relative py-6 lg:py-10 bg-[#fefaee]">
-          <div className="container mx-auto lg:px-4 flex flex-col lg:gap-12">
+          <div className="flex flex-col lg:px-4 lg:gap-12">
             <h2
-              className={`${abril.className} text-[24px] lg:text-[90px] ml-[120px] lg:ml-[350px] font-bold z-10`}
+              className={`${abril.className} text-[6vw] lg:text-[6vw] ml-[30vw] lg:ml-[30vw] font-bold z-10`}
               style={{ color: "#000000"}}
             >
               Questions fréquentes
             </h2>
 
-            <div className="relative w-full h-[40px] lg:h-[200px]">
+            <div className="relative w-full h-[10vw] lg:h-[10vw]">
               <img
                 src="/images/illustration_faq.png"
                 alt="FAQ Illustration"
-                className="absolute top-[-40px] left-[0px] w-[100px] lg:top-[-190px] lg:left-[-110px] lg:w-[350px] h-auto"
+                className="absolute top-[-10vw] left-[0px] w-[28vw] lg:top-[-15vw] xl:top-[-14vw] lg:left-[-2vw] lg:w-[30vw] h-auto"
               />
             </div>
 
-            <div className="flex flex-col items-center gap-2 lg:gap-4 lg:mt-[-180px] ">
+            <div className="flex flex-col items-center gap-2 lg:gap-4 lg:mt-[-10vw] ">
               {[
                 {
                   q: "Quand sortiront les programmes ?",
                   isSpecial: true,
                   aSpecial: (
                     <>
-                      Nous sortirons l’accompagnement nutrition et gestion des émotions avant la fin de l’année. Vous pouvez toutefois{" "}
+                      Nous sortirons l’accompagnement nutrition le 16 novembre. Quant à celui sur la gestion des émotions, il sortira avant la fin de l’année. Vous pouvez toutefois{" "}
                       <a
                         href="https://www.easyrdv.fr/docteur/intestilibre"
                         target="_blank"
@@ -990,7 +1024,7 @@ export default function Home() {
                       >
                         profitez des consultations
                       </a>{" "}
-                      qui permettent d’accéder dès maintenant à des méthodes validées. Le module{" "}
+                       qui permettent d’accéder dès maintenant à des méthodes validées. Le module{" "}
                       <a
                         href="#accompagnement-5"
                         onClick={(e) => {
@@ -1011,12 +1045,8 @@ export default function Home() {
                   a: "Nous savons comme il peut être angoissant de se déplacer surtout vers les nouveaux endroits. C’est pourquoi nous voulons proposer un accompagnement dans lequel vous choisissez l’endroit le plus confortable pour vous."
                 },
                 {
-                  q: "Combien coûtera l’accompagnement complet ?",
-                  a: "Le prix n’est pas encore fixé car il dépendra de la quantité de support qui sera disponible. Dès que le tarif sortira nous le notifierons sur le site. A savoir qu’IntestiLibre met un point d’honneur à ce qu’il ne dépasse pas"
-                },
-                {
                   q: "Qu’est ce qu’il y a de différent avec cette accompagnement complet par rapport aux autres ?",
-                  a: "Nous sommes parmi les premiers à proposer un accompagnement qui réuni différents experts. Avec IntestiLibre, ce n’est pas un seul professionnel qui vous accompagne mais une équipe pluridisciplinaire pour une amélioration significative."
+                  a: "Nous sommes parmi les premiers à proposer un accompagnement qui réunit différents experts. Avec IntestiLibre, ce n’est pas un seul professionnel qui vous accompagne mais une équipe pluridisciplinaire pour une amélioration significative."
                 },
                 {
                   q: "Comment l’accompagnement prendra forme ?",
@@ -1025,7 +1055,7 @@ export default function Home() {
               ].map((item, index) => (
                 <details
                   key={index}
-                  className="cursor-pointer rounded-lg relative z-20 border-2 lg:border-5 px-3 lg:px-7 py-2 lg:py-5  w-[90%] lg:w-[1100px]"
+                  className="cursor-pointer rounded-lg relative z-20 border-2 lg:border-5 px-3 lg:px-7 py-2 lg:py-5 w-[90%]"
                   style={{
                     border: "solid #000000",
                     backgroundColor: "#ebdfc8",
@@ -1033,7 +1063,7 @@ export default function Home() {
                   }}
                 >
                   <summary
-                    className="font-bold text-[15px] lg:text-[22px]"
+                    className="font-bold text-[3.3vw] lg:text-[2vw]"
                     style={{
                       color: "#000000",
                       cursor: "pointer",
@@ -1051,8 +1081,8 @@ export default function Home() {
                       justifyContent: "center",
                     }}
                   >
-                    {item.a && <p className="text-[13px] lg:text-[18px]"  style={{ color: "#000", lineHeight: "1.5" }}>{item.a}</p>}
-                    {item.isSpecial && <p className="text-[13px] lg:text-[18px]" style={{ color: "#000", lineHeight: "1.5" }}>{item.aSpecial}</p>}
+                    {item.a && <p className="text-[3.1vw] lg:text-[1.5vw]"  style={{ color: "#000", lineHeight: "1.5" }}>{item.a}</p>}
+                    {item.isSpecial && <p className="text-[3.1vw] lg:text-[1.5vw]" style={{ color: "#000", lineHeight: "1.5" }}>{item.aSpecial}</p>}
                   </div>
                 </details>
               ))}
@@ -1060,15 +1090,15 @@ export default function Home() {
 
             <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 mt-8 lg:mt-16">
               <div className="w-full px-2 lg:px-4 flex flex-col gap-4 lg:gap-16 lg:mt-2">
-                <div className="font-abril text-[18px] lg:text-[44px] text-center lg:text-left font-bold ml-[-30px] lg:ml-[-30px] " style={{ width: "120%", color: "#000000" }}>
+                <div className="font-abril text-[5vw] lg:text-[3vw] text-center lg:text-left font-bold ml-[-10vw] lg:ml-[9vw] " style={{ width: "120%", color: "#000000" }}>
                   Votre question ne figure pas ici ?<br />
                 </div>
-                <div className="font-abril text-[14px] lg:text-[36px] text-center justify-center lg:justify-left lg:text-left font-bold ml-[-30px] lg:ml-[-29px]" style={{ width: "120%", lineHeight: "1.6", color: "#000000" }}>
+                <div className="font-abril text-[4vw] lg:text-[2.5vw] text-center justify-center lg:justify-left lg:text-left font-bold ml-[-10vw] lg:ml-[10vw]" style={{ width: "120%", lineHeight: "1.6", color: "#000000" }}>
                   Posez-la juste ici, un de nos experts y<br /> répondra dans les plus brefs délais :
                 </div>
               </div>
 
-              <div className="p-2 lg:p-6 rounded-lg mt-2 lg:mt-0 relative z-10 border-[2px] lg:border-[3px] ml-[35px] lg:ml-[0px] w-[80%] lg:w-[45%] " style={{ border: "solid #000000", backgroundColor: "#ebdfc8" }}>
+              <div className="p-2 lg:p-6 rounded-lg mt-2 lg:mt-0 relative z-10 border-[2px] lg:border-[3px] ml-[15vw] lg:ml-[0px] lg:mr-[3vw] w-[70%] lg:w-[45%] xl:w-[45%] " style={{ border: "solid #000000", backgroundColor: "#ebdfc8" }}>
                 <ContactForm />
               </div>
             </div>

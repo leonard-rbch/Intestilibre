@@ -46,12 +46,12 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <input name="nom" value={form.nom} onChange={handleChange} placeholder="Nom" className="border p-2 rounded" style={{ backgroundColor: "#fefaee" }}/>
-      <input name="prenom" value={form.prenom} onChange={handleChange} placeholder="Prénom" className="border p-2 rounded" style={{ backgroundColor: "#fefaee" }}/>
-      <input name="email" value={form.email} onChange={handleChange} placeholder="Email" type="email" className="border p-2 rounded" style={{ backgroundColor: "#fefaee" }}/>
-      <input name="telephone" value={form.telephone} onChange={handleChange} placeholder="Téléphone" className="border p-2 rounded" style={{ backgroundColor: "#fefaee" }}/>
-      <textarea name="message" value={form.message} onChange={handleChange} placeholder="Message" className="border p-2 rounded h-32 resize-none" style={{ backgroundColor: "#fefaee" }}/>
-      <button type="submit" className="p-2 rounded text-black font-bold" style={{ backgroundColor: "#f06a3d", cursor: "pointer" }} >Envoyer</button>
+      <input name="nom" value={form.nom} onChange={handleChange} placeholder="Nom" className="border p-2 rounded text-[3vw] lg:text-[1.5vw]" style={{ backgroundColor: "#fefaee" }}/>
+      <input name="prenom" value={form.prenom} onChange={handleChange} placeholder="Prénom" className="border p-2 rounded text-[3vw] lg:text-[1.5vw]" style={{ backgroundColor: "#fefaee" }}/>
+      <input name="email" value={form.email} onChange={handleChange} placeholder="Email" type="email" className="border p-2 text-[3vw] rounded lg:text-[1.5vw]" style={{ backgroundColor: "#fefaee" }}/>
+      <input name="telephone" value={form.telephone} onChange={handleChange} placeholder="Téléphone" className="border p-2 text-[3vw] rounded lg:text-[1.5vw]" style={{ backgroundColor: "#fefaee" }}/>
+      <textarea name="message" value={form.message} onChange={handleChange} placeholder="Message" className="border p-2 rounded h-32 resize-none text-[3vw] lg:text-[1.5vw]" style={{ backgroundColor: "#fefaee" }}/>
+      <button type="submit" className="p-2 rounded text-black font-bold text-[3vw] lg:text-[1.5vw]" style={{ backgroundColor: "#f06a3d", cursor: "pointer" }} >Envoyer</button>
     </form>
   );
 }

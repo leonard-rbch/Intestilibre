@@ -24,43 +24,45 @@ export default function Footer() {
   };  
  
   return (
-    <footer className="relative bg-[#ebdfc8] pb-10 lg:py-50 mt-10">
-      {/* Logo */}
-      <div className="flex justify-center mt-[-70px] lg:mt-[0px] mb-8 lg:absolute lg:top-[-200px] lg:left-[40px] lg:w-[350px]">
-        <img src="/images/logo3_intestilibre.png" alt="Logo" className="w-[160px] lg:w-[350px] h-auto"/>
+    <footer className="flex flex-col bg-[#ebdfc8] pb-10 mt-10">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start lg:px-[3vw] lg:gap-[2vw] lg:mt-[2vw] ">
+        {/* Logo */}     
+        <div className="flex justify-center mt-[3vw] lg:mt-[0vw] mb-8">
+          <img src="/images/logo4_intestilibre.png" alt="Logo" className="w-[45vw] lg:w-[25vw] h-auto"/>
+        </div>
+
+        {/* Colonne 1 */}
+        <div className="flex flex-col items-center lg:items-start gap-2 text-[3.5vw] lg:text-[1.8vw] lg:w-[30%] " style={{ lineHeight: "2", color: "#1b2755" }}>
+          <button onClick={() => scrollToSection("accueil")} className="block hover:underline">Accueil</button>
+          <button onClick={() => scrollToSection("accompagnement")} className="block hover:underline">Accompagnement</button>
+          <button onClick={() => scrollToSection("equipe_experts")} className="block hover:underline">Notre équipe d&apos;experts</button>
+        </div>
+
+        {/* Colonne 2 */}
+        <div className="flex flex-col items-center lg:items-start gap-2 text-[3.5vw] lg:text-[1.8vw] mt-3 lg:mt-0 lg:w-[30%]" style={{ lineHeight: "2", color: "#1b2755" }}>
+          <button onClick={() => scrollToSection("faq")} className="block hover:underline">Questions fréquentes</button>
+          <a href="https://www.easyrdv.fr/docteur/intestilibre" target="_blank" rel="noopener noreferrer" className="block hover:underline">
+            Consultations
+          </a>
+        </div>
+
+        {/* Colonne 3 */}
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-justify gap-2 text-[3.5vw] lg:text-[1.8vw] mt-3 lg:mt-0 lg:w-[20%]s" style={{ lineHeight: "2", color: "#1b2755" }}>
+          <Link href="/legal#mentions-legales" className="block hover:underline">Mentions légales</Link>
+          <Link href="/legal#CGU-CGV" className="block hover:underline">Conditions générales de vente et d’utilisation</Link>
+          <Link href="/legal#politique-confidentialite" className="block hover:underline">Politique de cookies et de confidentialité</Link>
+        </div>
       </div>
 
-      {/* Colonne 1 */}
-      <div className="flex flex-col items-center gap-2 lg:absolute text-[14px] lg:text-[18px] " style={{ top: "80px", left: "500px", lineHeight: "2", color: "#1b2755" }}>
-        <button onClick={() => scrollToSection("accueil")} className="block hover:underline">Accueil</button>
-        <button onClick={() => scrollToSection("accompagnement")} className="block hover:underline">Accompagnement</button>
-        <button onClick={() => scrollToSection("equipe_experts")} className="block hover:underline">Notre équipe d&apos;experts</button>
-      </div>
-
-      {/* Colonne 2 */}
-      <div className="flex flex-col items-center gap-2 lg:absolute text-[14px] lg:text-[18px] mt-3 lg:mt-0" style={{ top: "80px", left: "750px", lineHeight: "2", color: "#1b2755" }}>
-        <button onClick={() => scrollToSection("faq")} className="block hover:underline">Questions fréquentes</button>
-        <a href="https://www.easyrdv.fr/docteur/intestilibre" target="_blank" rel="noopener noreferrer" className="block hover:underline">
-          Consultations
-        </a>
-      </div>
-
-      {/* Colonne 3 */}
-      <div className="flex flex-col items-center gap-2 lg:absolute text-[14px] lg:text-[18px] mt-3 lg:mt-0" style={{ top: "80px", right: "100px", lineHeight: "2", color: "#1b2755" }}>
-        <Link href="/legal#mentions-legales" className="block hover:underline">Mentions légales</Link>
-        <Link href="/cgv" className="block hover:underline">Conditions générales de vente et d’utilisation</Link>
-        <Link href="/legal#politique-confidentialite" className="block hover:underline">Politique de cookies et de confidentialité</Link>
-      </div>
-
+      
       {/* Grande zone de texte en bas */}
-      <div className="flex flex-col mx-auto items-center gap-2 text-center text-[12px] lg:text-[16px] mt-8 lg:mt-0
-                lg:absolute lg:left-1/2 lg:-translate-x-1/2"
+      <div className="self-center text-center text-[3vw] lg:text-[1.5vw] mt-8 lg:mt-[4vw] "
            style={{ bottom: "20px", width: "90%", color: "#000000" }}>
         <p>
           IntestiLibre propose un accompagnement dédié aux personnes souffrant du syndrome de l’intestin irritable. <br />
           Ce programme ne remplace en aucun cas une consultation médicale et n’a pas pour vocation d’établir un diagnostic ni de proposer un traitement miracle. <br />
-          Notre objectif est de transmettre des outils pratiques, validés par la science, pour améliorer votre qualité de vie et vous aider à devenir acteur de votre santé. <br /> Grâce à cet accompagnement, vous gagnez en autonomie face à vos troubles digestifs et retrouvez confort, équilibre et liberté au quotidien.
-        </p>
+           Notre objectif est de transmettre des outils pratiques, validés par la science, pour améliorer votre qualité de vie et vous aider à devenir acteur de votre santé. <br /> Grâce à cet accompagnement, vous gagnez en autonomie face à vos troubles digestifs et retrouvez confort, équilibre et liberté au quotidien.
+         </p>
       </div>
 
     </footer>
