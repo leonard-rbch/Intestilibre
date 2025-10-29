@@ -49,8 +49,8 @@ export default function Footer() {
         {/* Colonne 3 */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-justify gap-2 text-[3.5vw] lg:text-[1.8vw] mt-3 lg:mt-0 lg:w-[20%]s" style={{ lineHeight: "2", color: "#1b2755" }}>
           <Link href="/legal#mentions-legales" className="block hover:underline">Mentions légales</Link>
-          <Link href="/legal#CGU-CGV" className="block hover:underline">Conditions générales de vente et d’utilisation</Link>
-          <Link href="/legal#politique-confidentialite" className="block hover:underline">Politique de cookies et de confidentialité</Link>
+          <Link href="/legal#CGU" className="block hover:underline">Conditions générales de vente et d’utilisation</Link>
+          <Link href="/legal#politique-confidentialite" className="block hover:underline">Politique de confidentialité</Link>
         </div>
       </div>
 

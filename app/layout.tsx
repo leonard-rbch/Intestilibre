@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import CookieButton from "@/components/CookieButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Intestilibre",
-  description: "Centre d'Accompagnement du syndrome de l'intestin irritable. Une équipe d'experts rien que pour vous. Découvrez notre approche globale.",
+  title: "IntestiLibre",
+  description:
+    "Centre d'Accompagnement du syndrome de l'intestin irritable. Une équipe d'experts rien que pour vous. Découvrez notre approche globale.",
   icons: {
-    icon: "/favicon.png", 
+    icon: "/favicon.png",
   },
 };
 
@@ -26,15 +28,38 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // 🧩 Petite fonction qui vérifie d’abord si Cookiebot est chargé
+  const openCookieSettings = () => {
+    if (typeof window !== "undefined" && (window as any).Cookiebot) {
+      (window as any).Cookiebot.renew();
+    } else {
+      console.warn("Cookiebot n'est pas encore chargé.");
+    }
+  };
+
   return (
     <html lang="fr">
-      <body className="antialiased bg-[#fefaee] text-black">
-        {/* ================= GOOGLE ANALYTICS ================= */}
+      <head>
+        {/* ================= COOKIEBOT (RGPD) ================= */}
         <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-3KVTM637RY"
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="8ee78ee2-a595-4f79-80cf-237bdeb2443e"
+          data-blockingmode="auto"
+          strategy="beforeInteractive"
         />
-        <Script id="google-analytics">
+      </head>
+
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#fefaee] text-black`}
+      >
+        {/* ================= GOOGLE ANALYTICS (bloqué jusqu’au consentement) ================= */}
+        <Script
+          id="google-analytics"
+          type="text/plain"
+          data-cookieconsent="statistics"
+          strategy="afterInteractive"
+        >
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -42,12 +67,13 @@ export default function RootLayout({
             gtag('config', 'G-3KVTM637RY');
           `}
         </Script>
-        {/* ==================================================== */}
 
+        {/* ================= CONTENU DU SITE ================= */}
         {children}
+
+        {/* ✅ Bouton pour rouvrir la bannière Cookiebot */}
+        <CookieButton />
       </body>
     </html>
   );
 }
-
-
