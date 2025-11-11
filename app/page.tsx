@@ -10,8 +10,6 @@ import { Shrikhand, Alice, Abril_Fatface, Rubik } from "next/font/google";
 
 const shrikhand = Shrikhand({ weight: "400", subsets: ["latin"] });
 const alice = Alice({ weight: "400", subsets: ["latin"] });
-const abril = Abril_Fatface({ weight: "400", subsets: ["latin"] });
-const rubik = Rubik({ weight: "400", subsets: ["latin"] });
 
 export default function Home() {
   const router = useRouter();
@@ -61,7 +59,7 @@ useEffect(() => {
           <div className="flex flex-col px-[1rem] pb-[5vw] lg:pb-[2vw] ">
             {/* Bloc 1 : Titres accrocheurs */}
             <div id="titres" className="flex flex-col items-start w-full">
-                <div className="flex gap-5 lg:gap-10 mb-5">
+                <div className="flex gap-5 lg:gap-10 mb-5 lg:mb-0">
                   <img
                       src="/images/illustration2.png"
                       alt="Petite illustration"
@@ -111,11 +109,11 @@ useEffect(() => {
               className="
                 flex flex-col items-start [#fefaee] 
                 mx-[4vw] gap-3 mt-[6vw]
-                lg:mx-[7vw] lg:gap-0 lg:mt-[3vw] "
+                lg:mx-[7vw] lg:gap-0 lg:mt-[2vw] "
             >
                 <div
                   className={`${alice.className} flex text-center text-[3vw] px-[3vw] py-[1.5vw] w-auto h-auto border-[0.5vw] border-brown-300 rounded-full shadow-md
-                    lg:text-[2vw] lg:border-[0.4vw]`}
+                    lg:text-[1.8vw] lg:border-[0.4vw] lg:px-[3vw] lg:py-[1vw] `}
                   style={{
                     backgroundColor: "#f8f4ed",
                   }}
@@ -126,7 +124,7 @@ useEffect(() => {
 
                 <div
                   className={`${alice.className} self-end flex text-center text-[3vw] px-[3vw] py-[1.5vw] w-auto h-auto border-[0.5vw] border-brown-300 rounded-full shadow-md
-                    lg:text-[2vw] lg:mr-[5vw] lg:border-[0.4vw]`}
+                    lg:text-[2vw] lg:mr-[5vw] lg:border-[0.4vw] lg:px-[3vw] lg:py-[1vw] lg:mt-[-3vw] `}
                   style={{
                     backgroundColor: "#f8f4ed",
                   }}
@@ -138,7 +136,7 @@ useEffect(() => {
 
                 <div
                   className={`${alice.className} flex text-center text-[3vw] px-[3vw] py-[1.5vw] ml-[10vw] w-auto h-auto border-[0.5vw] border-brown-300 rounded-full shadow-md
-                    lg:text-[2vw] lg:ml-[15vw] lg:border-[0.4vw]`}
+                    lg:text-[2vw] lg:ml-[15vw] lg:border-[0.4vw] lg:px-[3vw] lg:py-[1vw] lg:mt-[-3vw] `}
                   style={{
                     backgroundColor: "#f8f4ed",
                   }}
@@ -189,7 +187,7 @@ useEffect(() => {
           id="presentation"
           className="bg-[#ebdfc8] pt-[5vw] lg:pt-[0vw]"
         >
-          <div className="flex flex-col items-center lg:px-[1vw] lg:gap-[3vw]">
+          <div className="flex flex-col items-center lg:px-[1vw] lg:gap-[1vw]">
             {/* Titre */}
             <div className="flex justify-center w-full pb-5">
               <h2
@@ -205,7 +203,7 @@ useEffect(() => {
               <img
                 src="/images/illustration_cercle2.png"
                 alt="Illustration"
-                className="lg:w-[70vw] lg:h-auto"
+                className="lg:w-[65vw] lg:h-auto"
               />
             </div>
 
@@ -287,7 +285,7 @@ useEffect(() => {
                 style={{ backgroundColor: "#ffecd5" }}
               >
                 <h2
-                  className={`${abril.className} text-[5vw] lg:text-[4vw] uppercase`}
+                  className="text-[5vw] lg:text-[3.5vw] font-bold uppercase"
                   style={{ color: "#f06a3d" }}
                 >
                   VOUS NE SAVEZ PLUS QUOI FAIRE ?
@@ -295,7 +293,7 @@ useEffect(() => {
               </div>
 
               <p
-                className="font-montserrat text-gray-700 text-[4vw] lg:text-[4vw] "
+                className="font-montserrat text-gray-700 text-[4vw] lg:text-[3vw] "
                 style={{ color: "#333333" }}
               >
                 Voici ce que vous devez suivre :
@@ -750,7 +748,7 @@ useEffect(() => {
 
             {/* Titre */}
             <h2
-              className={`${abril.className} text-[5vw] lg:text-[4vw] text-center font-bold`}
+              className={`${shrikhand.className} text-[5vw] lg:text-[4vw] text-center font-bold`}
               style={{ color: "#f06a3d" }}
             >
               Prise en charge de l&apos;intestin
@@ -910,7 +908,7 @@ useEffect(() => {
           <div className="z-10 px-[3vw] lg:px-[3vw]">
             {/* Titre */}
             <h2
-              className={`${abril.className} text-[6vw] lg:text-[5vw] font-bold text-center mb-[6vw] lg:mb-[4vw]`}
+              className={`${shrikhand.className} text-[6vw] lg:text-[5vw] font-bold text-center mb-[6vw] lg:mb-[4vw]`}
               style={{ color: "#f06a3d" }}
             >
               Compléments Alimentaires :
@@ -994,7 +992,7 @@ useEffect(() => {
         <section id="faq" className="relative py-6 lg:py-10 bg-[#fefaee]">
           <div className="flex flex-col lg:px-4 lg:gap-12">
             <h2
-              className={`${abril.className} text-[6vw] lg:text-[6vw] ml-[30vw] lg:ml-[30vw] font-bold z-10`}
+              className={`${shrikhand.className} text-[5vw] lg:text-[5vw] ml-[30vw] lg:ml-[30vw] font-bold z-10`}
               style={{ color: "#000000"}}
             >
               Questions fréquentes

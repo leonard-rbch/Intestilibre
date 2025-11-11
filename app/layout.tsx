@@ -28,7 +28,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // 🧩 Petite fonction qui vérifie d’abord si Cookiebot est chargé
   const openCookieSettings = () => {
     if (typeof window !== "undefined" && (window as any).Cookiebot) {
       (window as any).Cookiebot.renew();
@@ -48,12 +47,32 @@ export default function RootLayout({
           data-blockingmode="auto"
           strategy="beforeInteractive"
         />
+
+        {/* ================= PARAMÈTRES DE CONSENTEMENT PAR DÉFAUT ================= */}
+        <Script id="gtag-default-consent" data-cookieconsent="ignore" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag("consent", "default", {
+                ad_personalization: "denied",
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                analytics_storage: "denied",
+                functionality_storage: "denied",
+                personalization_storage: "denied",
+                security_storage: "granted",
+                wait_for_update: 500,
+            });
+            gtag("set", "ads_data_redaction", true);
+            gtag("set", "url_passthrough", false);
+          `}
+        </Script>
       </head>
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#fefaee] text-black`}
       >
-        {/* ================= GOOGLE ANALYTICS (bloqué jusqu’au consentement) ================= */}
+        {/* ================= GOOGLE ANALYTICS (activé SEULEMENT après consentement) ================= */}
         <Script
           id="google-analytics"
           type="text/plain"
