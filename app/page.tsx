@@ -665,9 +665,7 @@ useEffect(() => {
               {/* Barre horizontale */}
               <div
                 className="h-[1vw] lg:h-[0.5vw] w-[15%] lg:w-[10%]"
-                style={{
-                  backgroundColor: "#f06a3d",
-                }}
+                style={{ backgroundColor: "#f06a3d" }}
               />
               <div
                 className="rounded-lg lg:w-[78%] px-[1vw] lg:px-[1vw] py-2 h-auto z-10"
@@ -677,37 +675,48 @@ useEffect(() => {
                   className={`${shrikhand.className} text-[4vw] lg:text-[3.5vw]`}
                   style={{ color: "#f06a3d" }}
                 >
-                  Les 3 piliers pour retrouver sa liberté 
+                  Les 3 piliers pour retrouver sa liberté
                 </h2>
               </div>
-                <img
-                  src="/images/illustration_draw3.png"
-                  alt="Dernière illustration"
-                  className="w-[22vw] lg:w-[12vw] xl:w-[10vw] h-auto lg:ml-[1vw]"
-                />
+              <img
+                src="/images/illustration_draw3.png"
+                alt="Dernière illustration"
+                className="w-[22vw] lg:w-[12vw] xl:w-[10vw] h-auto lg:ml-[1vw]"
+              />
             </div>
 
             {/* Bloc 2 : 3 images rectangulaires verticales */}
-            <div className="w-full z-10 
-                          grid grid-cols-2 gap-4 justify-items-center 
-                          lg:flex lg:justify-between lg:px-[2vw] lg:gap-[4vw]">
+            <div className="w-full z-10 grid grid-cols-2 gap-4 justify-items-center lg:flex lg:justify-between lg:px-[2vw] lg:gap-[4vw]">
               {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className={`relative ${i === 3 ? "col-span-2 justify-self-center" : ""}`}
-              >
-                <img
-                  src={`/images/illustration_pillier${i}.png`}
-                  alt={`Pillier ${i}`}
-                  className="w-[40vw] lg:w-[30vw]"
-                />
-                <a
-                  href={`#accompagnement-${i + 2}`}
-                  className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-[3vw] lg:text-[2vw] font-bold underline cursor-pointer whitespace-nowrap"
+                <div
+                  key={i}
+                  className={`relative ${i === 3 ? "col-span-2 justify-self-center" : ""}`}
                 >
-                  EN SAVOIR PLUS
-                </a>
-              </div>
+                  <img
+                    src={`/images/illustration_pillier${i}.png`}
+                    alt={`Pillier ${i}`}
+                    className="w-[40vw] lg:w-[30vw]"
+                  />
+
+                  {/* EN SAVOIR PLUS — version modifiée pour renvoyer un URL pour la première image */}
+                  {i === 1 ? (
+                    <a
+                      href="https://intestilibre.systeme.io/modulenutrition"  // 🔗 Remplace par ton URL
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-[3vw] lg:text-[2vw] font-bold underline cursor-pointer whitespace-nowrap"
+                    >
+                      EN SAVOIR PLUS
+                    </a>
+                  ) : (
+                    <a
+                      href={`#accompagnement-${i + 2}`}
+                      className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-[3vw] lg:text-[2vw] font-bold underline cursor-pointer whitespace-nowrap"
+                    >
+                      EN SAVOIR PLUS
+                    </a>
+                  )}
+                </div>
               ))}
             </div>
           </div>
@@ -789,7 +798,7 @@ useEffect(() => {
                     color: "#000000",
                   }}
                 >
-                  REJOINDRE LA FILE D&apos;ATTENTE
+                  JE RÉSERVE MON APPEL OFFERT
                 </button>
               </a>
             </div>
@@ -868,7 +877,7 @@ useEffect(() => {
                     color: "#000000",
                   }}
                 >
-                  REJOINDRE LA FILE D&apos;ATTENTE
+                  JE RÉSERVE MON APPEL OFFERT
                 </button>
               </a>
             </div>
